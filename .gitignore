@@ -1,0 +1,14 @@
+# Local tooling and dependencies
+/.gstack/
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+
+# Local environment and private keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
