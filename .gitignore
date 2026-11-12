@@ -6,6 +6,13 @@ venv/
 node_modules/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Generated data and external downloads
+/outputs/
+/downloads/
 
 # Local environment and private keys
 .env
@@ -13,3 +20,8 @@ __pycache__/
 !.env.example
 *.pem
 *.key
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+~$*

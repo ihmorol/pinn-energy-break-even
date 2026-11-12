@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "docs/proposal/ENERGY_CROSSOVER_PROPOSAL.pdf",
+      "sha256": "8b851bd9a1e94a838dbeb05dff94329e3f091005e5f4a0b4ff9a3df4ba8a232a",
+      "size_bytes": 417967
+    },
+    {
+      "path": "docs/proposal/ENERGY_CROSSOVER_PROPOSAL.docx",
+      "sha256": "773eb5e45009ef4c10baf05ba50f5aef990c348a885e1d785f83efbd812a7ede",
+      "size_bytes": 253716
+    }
+  ]
+}

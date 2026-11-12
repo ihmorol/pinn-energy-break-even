@@ -8,11 +8,11 @@
 
 ## 1. Submission baseline
 
-The research direction is fixed by the [submitted two-page proposal](ENERGY_CROSSOVER_PROPOSAL.pdf). The [Word source](ENERGY_CROSSOVER_PROPOSAL.docx) and PDF remain unchanged as the submission record. This document is the active working reference for the research team and supervisor.
+The [submitted two-page proposal](proposal/ENERGY_CROSSOVER_PROPOSAL.pdf) sets the research scope. The [Word source](proposal/ENERGY_CROSSOVER_PROPOSAL.docx) and PDF stay unchanged as the submission record. This plan is the team's working reference. Follow the [writing guide](writing-style.md) when editing it.
 
 The question is whether the setup and training costs of a parametric PINN are recovered through repeated use on **new parameter settings**, compared with an efficient classical PDE solver at matched accuracy. We will estimate the energy and runtime break-even points separately. Computational cost means measured runtime in this project, not an assumed operation count.
 
-No crossover, an impractically distant crossover, and insufficient evidence for a reliable crossover are all valid outcomes. No measured results or claims of superiority are established yet.
+No crossover, an impractically distant crossover, and insufficient evidence for a reliable crossover are all valid outcomes. We have no measured results yet and do not know which method will use less energy.
 
 ## 2. Fixed workload and methods
 

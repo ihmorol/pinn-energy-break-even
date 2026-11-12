@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "is_template": true,
+  "run_id": null,
+  "status": "template",
+  "task_url": null,
+  "purpose": null,
+  "operator": null,
+  "started_at_utc": null,
+  "ended_at_utc": null,
+  "git_commit": null,
+  "working_tree_dirty": null,
+  "uncommitted_changes_path": null,
+  "config_path": null,
+  "config_sha256": null,
+  "protocol": {
+    "path": "docs/research-plan.md",
+    "commit": null,
+    "stage": null,
+    "approval_reference": null,
+    "compute_budget": null,
+    "retry_policy": null
+  },
+  "environment": {
+    "hardware_id": null,
+    "cpu": null,
+    "gpu": null,
+    "memory": null,
+    "os": null,
+    "python": null,
+    "pytorch": null,
+    "scipy": null,
+    "measurement_tool": null,
+    "measurement_tool_version": null,
+    "device": null,
+    "thread_count": null
+  },
+  "method": null,
+  "training_seed": null,
+  "query_seed": null,
+  "repetition": null,
+  "parameter_set_path": null,
+  "parameter_set_sha256": null,
+  "output_grid_path": null,
+  "classical_reuse": null,
+  "model_path": null,
+  "model_sha256": null,
+  "query_batch_size": null,
+  "warmup_policy": null,
+  "gpu_synchronization": null,
+  "accuracy": {
+    "target_relative_l2": null,
+    "acceptance_rule": null,
+    "reference_path": null,
+    "reference_error_allowance": null,
+    "errors_path": null,
+    "passes": null
+  },
+  "measurement": {
+    "boundary": null,
+    "counters": [],
+    "sampling_interval_s": null,
+    "background_energy_policy": null,
+    "setup": {
+      "energy_j": null,
+      "elapsed_s": null,
+      "source_kind": null,
+      "notes": null
+    },
+    "training": {
+      "energy_j": null,
+      "elapsed_s": null,
+      "source_kind": null,
+      "notes": null
+    },
+    "query_block": {
+      "query_count": null,
+      "energy_j": null,
+      "elapsed_s": null,
+      "source_kind": null,
+      "notes": null
+    },
+    "overlap_notes": null
+  },
+  "deployment_cost_policy": null,
+  "study_energy_entry_ids": [],
+  "raw_artifacts": [],
+  "failure_or_stop_reason": null,
+  "warnings": [],
+  "notes": null
+}
