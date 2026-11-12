@@ -6,10 +6,14 @@ Record what each source actually supports. A citation copied from the proposal i
 
 | Source | Identifier | Check status |
 |---|---|---|
-| Grossmann, T. G., Komorowska, U. J., Latz, J., & Schönlieb, C.-B. (2024). *Can physics-informed neural networks beat the finite element method?* IMA Journal of Applied Mathematics. | https://doi.org/10.1093/imamat/hxae011 | Supplied in the proposal; not independently checked in this workspace setup. |
-| Huang, Y., Wang, X., Yao, S., Zeng, F., & Peng, W. (2026). *Classical, machine learning, and hybrid solvers for partial differential equations: An evidence-weighted review and decision framework* [Preprint]. arXiv. | https://arxiv.org/abs/2610.32911 | Supplied in the proposal; not independently checked in this workspace setup. |
+| Grossmann, T. G., Komorowska, U. J., Latz, J., & Schönlieb, C.-B. (2024). *Can physics-informed neural networks beat the finite element method?* IMA Journal of Applied Mathematics. | https://doi.org/10.1093/imamat/hxae011 | Checked 2026-11-12: identifier resolves (Crossref, vol. 89(1), 143-174); full text read; see note [grossmann-2024-pinn-vs-fem.md](grossmann-2024-pinn-vs-fem.md). |
+| Huang, Y., Wang, X., Yao, S., Zeng, F., & Peng, W. (2026). *Classical, machine learning, and hybrid solvers for partial differential equations: An evidence-weighted review and decision framework* [Preprint]. arXiv. | https://arxiv.org/abs/2610.32911 | Checked 2026-11-12: arXiv v1 exists and matches the title; full text read; see note [huang-2026-solver-review.md](huang-2026-solver-review.md). Confirm the exact author list from the PDF before the final report. |
 
 Before using either source to support a new claim, resolve its identifier, confirm the bibliographic details, and read the relevant passage. If a reference does not match or cannot be accessed, record the problem. Do not silently fix the already-submitted PDF or Word file.
+
+## Checked corpus and shortlist
+
+The [literature shortlist](shortlist.md) ranks the verified corpus (24 papers with stored PDFs and notes, plus verified entries without PDFs) and names the three core papers the work starts from. Each paper note in this directory records what was read, the local file location under the ignored `downloads/` path, and the SHA-256 hash. Notes with abstract-level access only say so; their claims must not be quoted in the report until the full text is read.
 
 ## Add a paper note
 
