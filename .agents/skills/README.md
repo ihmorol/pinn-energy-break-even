@@ -5,6 +5,7 @@ These skills are shared instructions stored in the checkout. They do not require
 | Skill | When to use it |
 |---|---|
 | [research-writing](research-writing/SKILL.md) | Draft or edit prose for any part of this project |
+| [research-coding](research-coding/SKILL.md) | Write, change, or review solver, training, measurement, or analysis code |
 | [literature-check](literature-check/SKILL.md) | Check a paper, citation, or literature claim |
 | [experiment-run](experiment-run/SKILL.md) | Plan, run, or record a pilot, training job, validation, or energy trial |
 | [research-review](research-review/SKILL.md) | Review a method, result, figure, or report claim before accepting it |

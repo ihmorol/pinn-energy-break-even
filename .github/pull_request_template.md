@@ -10,6 +10,7 @@ List the commands run and their results. For research work, link the run record 
 
 - [ ] This stays within the agreed scope, or an approved change is linked.
 - [ ] The prose follows the writing guide; technical terms, quotations, citations, values, and uncertainty are intact.
+- [ ] Code follows the coding rules: no unneeded lines, settings in config, new logic tested.
 - [ ] The submitted proposal files are unchanged.
 - [ ] No private keys, local histories, unauthorized uploads, or large raw artifacts are included.
 - [ ] Relevant workspace and research tests pass; failures or skipped checks are explained.

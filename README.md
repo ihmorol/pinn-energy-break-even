@@ -19,6 +19,7 @@ The primary relative L2 error targets are 1% and 0.1%. The 0.01% target is optio
 | [Research plan](docs/research-plan.md) | Scope, twelve-week plan, and protocol decisions |
 | [Submitted PDF](docs/proposal/ENERGY_CROSSOVER_PROPOSAL.pdf) and [Word file](docs/proposal/ENERGY_CROSSOVER_PROPOSAL.docx) | The original two-page submission and its source |
 | [Writing guide](docs/writing-style.md) | Required word choice, style, and fact checks |
+| [Coding rules](docs/coding-rules.md) | Code layout and the rules all code follows |
 | [References](references/README.md) | Source records and paper notes |
 | [Experiments](experiments/README.md) | Run records, failures, and study electricity accounting |
 | [Project skills](.agents/skills/README.md) | Shared instructions for writing, literature, runs, and review |
