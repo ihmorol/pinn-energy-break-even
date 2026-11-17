@@ -17,7 +17,9 @@ Citation counts are OpenAlex `cited_by_count` on 2026-11-17. They show reach, no
 
 Limits: the 2026-11-17 search was targeted, not systematic. "Not found" means not found in our corpus, the 2026-11-12 search, or this search.
 
-## 2. Venue status of our current 24 papers
+## 2. Venue status of the first-search papers
+
+This section describes the 24 papers of the first search. Chatain et al. 2025 has since moved to the background file (Section 5, item 7), so 23 remain in the shortlist.
 
 **Peer-reviewed (17):** Grossmann et al. 2024 (IMA J. Appl. Math.), Raissi et al. 2019 (J. Comput. Phys.), Karniadakis et al. 2021 (Nat. Rev. Phys.), Cuomo et al. 2022 (J. Sci. Comput.), de Hoop et al. 2022 (J. Mach. Learn.), Wang, Teng, Perdikaris 2021 (SIAM J. Sci. Comput.), Wang, Yu, Perdikaris 2022 (J. Comput. Phys.), Krishnapriyan et al. 2021 (NeurIPS), Mishra and Molinaro 2022 (IMA J. Numer. Anal.), Hao et al. 2024 (NeurIPS D&B), Henderson et al. 2020 (JMLR), Strubell et al. 2019 (ACL), Schwartz et al. 2020 (CACM), Patterson et al. 2022 (IEEE Computer), Luccioni et al. 2024 (FAccT), Dodge et al. 2022 (FAccT), Reddi et al. MLPerf Power (HPCA 2025).
 
@@ -57,6 +59,8 @@ All DOIs below resolved in Crossref. "Checked claim" is what we read on a primar
 | Hesthaven, Rozza, Stamm 2016, *Certified Reduced Basis Methods for Parametrized Partial Differential Equations*, [10.1007/978-3-319-22470-1](https://doi.org/10.1007/978-3-319-22470-1) | SpringerBriefs in Mathematics | 1511 | Title-level only; not read. | The classical family built for many-query parametrized PDEs. Our scope fixes finite differences, so reduced basis is a limit to state in the report, not a method to add. |
 
 ## 4. Research gaps, rebuilt on peer-reviewed evidence
+
+The cell-by-cell evidence, with page and section locations and the published runtime ratios, is in [gap-evidence.md](gap-evidence.md).
 
 ### G1. No metered-energy comparison of a PINN against a classical solver at matched accuracy
 

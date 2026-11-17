@@ -49,6 +49,24 @@ Citation counts are OpenAlex `cited_by_count` on 2026-11-17.
 - **Checked claim (full text, Section 2):** PINN error splits into approximation, optimization, and generalization error; "for smooth PDE solutions L-BFGS can find a good solution with less iterations than Adam". Proposes residual-based adaptive refinement (RAR).
 - **Use it if:** the report needs a citation for the three-part PINN error split. Moved here on 2026-11-17 from a short-lived note: Rathore et al. 2024 and Markidis 2021 already cover the optimizer point, and Wu et al. 2023 covers sampling.
 
+### Wang, Li, Xu, et al. (2026), FD-Bench
+
+- **Citation:** Haixin Wang, Ruoyan Li, Fred Xu, Fang Sun, Kaiqiao Han, Zijie Huang, Ching Chang, Xiao Luo, Wei Wang, Yizhou Sun. FD-Bench: A Modular and Fair Benchmark for Data-driven Fluid Simulation. *Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining* (KDD 2026). [10.1145/3770855.3817497](https://doi.org/10.1145/3770855.3817497). Cites 8.
+- **Checked claim (abstract):** A benchmark for data-driven fluid models that claims "the first systematic framework for direct comparison with traditional numerical solvers", across 10 flow scenarios.
+- **Use it if:** we need a recent example of a fair-comparison protocol against numerical solvers. It covers data-driven, time-dependent fluid models, not PINNs or energy.
+
+### Bischof and Kraus (2025)
+
+- **Citation:** Rafael Bischof, Michael A. Kraus. Multi-Objective Loss Balancing for Physics-Informed Deep Learning. *Computer Methods in Applied Mechanics and Engineering* 439:117914. [10.1016/j.cma.2025.117914](https://doi.org/10.1016/j.cma.2025.117914). Cites 401.
+- **Checked claim (abstract):** Weighting of competing PINN loss terms matters; compares Learning Rate Annealing, GradNorm, and SoftAdapt, and proposes ReLoBRaLo, tested on Burgers, Kirchhoff plate, Helmholtz, and over 20 PINNacle PDEs.
+- **Use it if:** we use soft boundary penalties (model-equations Candidate B) and need a loss-weighting method. Not needed with hard boundary enforcement.
+
+### Luo et al. (2025)
+
+- **Citation:** Kuang Luo, Jingshang Zhao, Yingping Wang, Jiayao Li, Junjie Wen, Jiong Liang, Henry Soekmadji, Shaolin Liao. Physics-informed neural networks for PDE problems: a comprehensive review. *Artificial Intelligence Review* 58(10):323. [10.1007/s10462-025-11322-7](https://doi.org/10.1007/s10462-025-11322-7). Cites 385.
+- **Checked claim (abstract):** Review of PINN architectures, resampling, loss and activation functions, and feature embeddings.
+- **Use it if:** a second recent review is wanted. Prefer Toscano et al. 2025 (shortlist Tier F).
+
 ## Preprints (not peer-reviewed; context only)
 
 ### Zhang, Roberts, Marwah, Khodak (2026)
