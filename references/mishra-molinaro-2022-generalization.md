@@ -29,3 +29,12 @@ Provides the theoretical anchor for the accuracy gate: it tells us what knobs (t
 ## Check status and gaps
 
 Journal, volume, pages, DOI, and preprint verified via Crossref and the arXiv API. Gaps: abstract-level access only. The bound's constants and assumptions were not read; do not state the bound's form in the report without a full-text read.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods and training sections of the locally stored PDF (hash above matched on re-download). Not yet independently read by a human member.
+
+- Section 2: training points can be grid, random, or low-discrepancy (Sobol) points; low-discrepancy points are suggested for moderate dimensions (roughly 4 to 20). Our (x, y, theta_1, theta_2) input space is four-dimensional.
+- Numerical experiments: ensemble training over a hyperparameter grid (layers, width, regularization exponent and size; Table 1), 360 configurations, each retrained five times from different initial weights, keeping the run with the smallest training loss. Optimizer: L-BFGS; light or no L2 regularization worked best.
+- Consequence for us: selection by lowest training loss over many retrains is a real cost. If we select among seeds or settings, every discarded run belongs in the study ledger, and the deployment retry policy must say which of them a user would also pay for.
+- The bound's exact form and constants were still not transcribed; do not state it in the report from this note.

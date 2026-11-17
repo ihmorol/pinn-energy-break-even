@@ -1,6 +1,6 @@
 # Background papers (lower relevance, kept for later)
 
-These papers came up in the 2026-11-17 searches for the [gap analysis](../docs/gap-analysis.md). They are not part of the [shortlist](shortlist.md) and have no paper notes, because they do not support a gap or a design rule directly. They are kept here so we can pick one up later without searching again.
+These papers came up in the 2026-11-17 searches for the [gap analysis](../docs/gap-analysis.md). Two entries were moved here from the shortlist on the same day: DeepXDE (Lu et al. 2021) and Chatain et al. 2025; each entry says why. They are not part of the [shortlist](shortlist.md) and have no paper notes, because they do not support a gap or a design rule directly. They are kept here so we can pick one up later without searching again.
 
 Rules for this file:
 
@@ -12,11 +12,6 @@ Citation counts are OpenAlex `cited_by_count` on 2026-11-17.
 
 ## Peer-reviewed
 
-### Sun, Gao, Pan, Wang (2020)
-
-- **Citation:** Surrogate modeling for fluid flows based on physics-constrained deep learning without simulation data. *Computer Methods in Applied Mechanics and Engineering* 361:112732. [10.1016/j.cma.2019.112732](https://doi.org/10.1016/j.cma.2019.112732). Cites 1330.
-- **Checked claim (arXiv abstract):** A parametric surrogate for internal flows trained "without relying on any simulation data", with a network structure that enforces initial and boundary conditions. Motivated by many-query cost; the abstract gives no runtime comparison with CFD.
-- **Use it if:** we need a peer-reviewed citation for building the boundary condition into the PINN output (Candidate A in [model-equations.md](../docs/model-equations.md)), or for the many-query motivation.
 
 ### Penwarden, Zhe, Narayan, Kirby (2023)
 
@@ -48,6 +43,12 @@ Citation counts are OpenAlex `cited_by_count` on 2026-11-17.
 - **Checked claim:** Title and metadata only; not read.
 - **Use it if:** the report's limitations section notes that reduced-order models are a classical many-query alternative that our fixed scope does not test. Read the relevant chapter first.
 
+### Lu, Meng, Mao, Karniadakis (2021)
+
+- **Citation:** DeepXDE: A deep learning library for solving differential equations. *SIAM Review* 63(1):208-228. [10.1137/19M1274067](https://doi.org/10.1137/19M1274067). Crossref cited-by 2,470.
+- **Checked claim (full text, Section 2):** PINN error splits into approximation, optimization, and generalization error; "for smooth PDE solutions L-BFGS can find a good solution with less iterations than Adam". Proposes residual-based adaptive refinement (RAR).
+- **Use it if:** the report needs a citation for the three-part PINN error split. Moved here on 2026-11-17 from a short-lived note: Rathore et al. 2024 and Markidis 2021 already cover the optimizer point, and Wu et al. 2023 covers sampling.
+
 ## Preprints (not peer-reviewed; context only)
 
 ### Zhang, Roberts, Marwah, Khodak (2026)
@@ -55,18 +56,26 @@ Citation counts are OpenAlex `cited_by_count` on 2026-11-17.
 - **Citation:** Breakeven complexity: A new perspective on neural partial differential equation solvers. arXiv:2605.15399 (v2, 2026-11-08). No published version found.
 - **Checked claim (arXiv HTML, first 100k characters):** Defines break-even as the number of forward solves before a neural solver beats an error-equivalent classical solver, with data generation and training in the budget (Sec. 3.3). Hyperparameter sweeps and warm-up are excluded (Sec. 4.1, App. B). Cost is wall-clock on NVIDIA L40S GPUs; FLOPs rejected; power named as possible future work (Sec. 4.1). No PINNs.
 - **Use it if:** we compare our break-even definition with another one. It is the closest break-even framework found, so re-check for a published version before the final report; if published, promote it to the shortlist.
+- **Extra check (full text, Sections 3.3 and 4, read 2026-11-17):** cost is wall-clock time; the classical solver is downscaled until its error matches the neural solver. The authors note their model assumes simulation cost is about the same for all parameters, which can fail when the parameter changes problem difficulty.
 
 ### Lazareva and Tarakanov (2026)
 
 - **Citation:** Loss-Conditional PINNs for Parametric PDE Families. arXiv:2606.04420.
 - **Checked claim (arXiv HTML):** One parametric PINN against retraining a per-instance PINN; break-even K* = T_LC / T_base (Sec. 5.6). Table 8 values: Burgers about 3.5, Helmholtz 1D about 8.3, 2D about 15, 3D about 19, Schrödinger about 58. Wall-clock only, four seeds, Apple M4 Max GPU. Classical solvers are used only as error references. Sec. 5.5 and Table 8 disagree on the Burgers figure.
 - **Use it if:** we need an example of a parametric PINN amortizing against retraining PINNs. It does not compare with a classical solver.
+- **Training details (full text, Section 3.4, read 2026-11-17):** tanh network with four hidden layers of 64, Xavier init; Adam at 1e-3 with cosine annealing and gradient-norm clipping at 1.0; a new parameter sample at every step; L-BFGS finish on fixed quadrature with a revert-on-worse safeguard. For parameters that change the PDE operator, FiLM conditioning gave about ten times lower relative L2 error than plain input concatenation. Contingency idea for our pipeline only (preprint).
 
 ### Nooraiepour, Both, Kadeethum, Sadeghnejad (2026)
 
 - **Citation:** Partial Differential Equations in the Age of Machine Learning: A Critical Synthesis of Classical, Machine Learning, and Hybrid Methods. arXiv:2603.07655.
 - **Checked claim (abstract):** Conceptual review contrasting classical and ML PDE methods, with an error budget and hybrid design principles. No measurements.
 - **Use it if:** the introduction needs a recent overview. Prefer the peer-reviewed reviews already in the shortlist (Cuomo et al. 2022, Karniadakis et al. 2021).
+
+### Chatain, Rizvi-Martel, Rabusseau, Oberman (2025)
+
+- **Citation:** Numerical PDE solvers outperform neural PDE solvers. arXiv:2507.21269v1. No published version found on 2026-11-17 (gap analysis, Section 2).
+- **Checked claim (abstract, 2026-11-12):** DeepFDM, a differentiable finite-difference model, reaches one to two orders of magnitude lower error than tested neural solvers with 10 to 20 times fewer training epochs.
+- **Use it if:** the discussion mentions learned solvers built on classical stencils. Moved here from shortlist Tier A on 2026-11-17: it is an unrefereed preprint about a method we do not use, and no project document cited it. Its note was removed; the PDF hash was df5693b2aa200d0dc39349bca8d0a779772d79fc6d9d3b45c2b380c7cab97ab4.
 
 ## Not kept
 

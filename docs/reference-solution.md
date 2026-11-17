@@ -31,6 +31,8 @@ The build order runs pilot first (telemetry check, 1D pilot, protocol freeze), t
 - **Seeds and failures**: at least three training seeds under the frozen budget (plan, Section 4). Failed or diverged runs are logged with their cost; they are part of the deployment estimate under the declared retry policy, not hidden ([Wang, Yu, and Perdikaris 2022](../references/wang-2022-pinn-ntk-failure.md)).
 - **Contingency mitigations**, adopted only if the pilot shows the known pathologies, and logged with their tuning cost: adaptive loss weighting from gradient statistics ([Wang, Teng, and Perdikaris 2021](../references/wang-2021-gradient-pathologies.md)), NTK-eigenvalue-based balancing ([Wang, Yu, and Perdikaris 2022](../references/wang-2022-pinn-ntk-failure.md)), or curriculum regularization ([Krishnapriyan et al. 2021](../references/krishnapriyan-2021-failure-modes.md)). Any mitigation changes S_P, which is fine as long as the full cost lands in the ledger.
 
+The [training pipeline plan](training-pipeline.md) expands this section into stages, known failure modes, candidate settings, and stop and retry rules, based on a full-text read of the training literature.
+
 ## 4. Measurement harness
 
 - **Counters**: CPU package and DRAM via the Intel RAPL powercap interface; GPU via the NVIDIA management interface (nvidia-smi or its library). Availability is confirmed on the pilot machine first; if a required counter is missing, the fallback estimate is approved with the supervisor before the main trials and labeled `modeled` (plan, Section 4; tooling anchored in [Henderson et al. 2020](../references/henderson-2020-energy-reporting.md), Section 4.3.1).

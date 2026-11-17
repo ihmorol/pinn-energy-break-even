@@ -30,3 +30,13 @@ Our main problem is steady diffusion, a close cousin of the diffusion operators 
 ## Check status and gaps
 
 Venue confirmed through the NeurIPS 2021 proceedings location (OpenAlex). Gaps: abstract-level access only; do not quote the exact operator families or error tables until the full text is read. The proceedings DOI was not recorded; add it when the note is next updated.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods and training sections of the locally stored PDF (hash above matched on re-download). Not yet independently read by a human member.
+
+- Section 3 setup: 4-layer, 50-neuron tanh network, random collocation points, L-BFGS with learning rates swept from 1e-4 to 2.0; at least ten seeds per case. The authors report that L-BFGS worked better than Adam-type optimizers for their PINNs.
+- Section 3: error grows with the PDE coefficient. For convection, error reaches almost 100% for beta above 10. For reaction-diffusion, PINNs fail at rho = 5, nu = 5, and reach about 50% error at nu = 2.
+- Section 1: the network can represent the solution; failure comes from the optimization problem that the soft PDE constraint creates.
+- Curriculum regularization starts training with a small PDE coefficient and raises it step by step, warm-starting each stage.
+- For our family the matching idea is a curriculum over conductivity contrast: train first on the low-contrast part of the parameter box. That is our inference and would be a protocol choice to freeze, with its cost logged.

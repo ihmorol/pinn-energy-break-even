@@ -33,3 +33,12 @@ This is the direct predecessor of our study. It supplies the comparison structur
 ## Check status and gaps
 
 Verified against Crossref (DOI, volume 89, issue 1, pages 143-174, note: an earlier draft of our shortlist said 143-164, corrected here) and PMC (title, authors, DOI match). Full text read. Gaps: the exact per-problem timings were not transcribed into this note; read the tables again before quoting specific numbers in the report. GPU (PINN) versus CPU (FEM) placement is a comparability limit to discuss, not copy silently.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods and training sections of the locally stored PDF (hash above matched on re-download). Not yet independently read by a human member.
+
+- Section 3.1: PINN training uses Adam first, then L-BFGS to refine. Collocation points are re-sampled every Adam epoch by Latin hypercube sampling; L-BFGS does not allow resampling, so points are sampled once for that phase.
+- Section 4 (1D Poisson): N = 256 collocation points per epoch, tanh networks from [1, 1] up to [40, 40, 40, 1], Adam for 15,000 epochs at learning rate 1e-4, then L-BFGS; errors measured on 512 mesh points against the exact solution. Boundary values enter as soft penalty terms in this loss.
+- Section 2.1: inhomogeneous Dirichlet data can be handled by subtracting a function that meets the boundary values and solving a homogeneous problem.
+- The fixed point set in the L-BFGS phase is a generalization risk to check on held-out points, since that phase can fit the residual at those points only.

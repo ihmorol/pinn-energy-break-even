@@ -29,3 +29,13 @@ Not a template to extend (our scope is fixed at one 2D problem), but a design re
 ## Check status and gaps
 
 DOI, venue, pages, and preprint verified via Crossref and the arXiv API. Gaps: abstract-level access only; read the heat-conduction results before quoting any per-problem PINN performance from PINNacle.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods and training sections of the locally stored PDF (hash above matched on re-download). Not yet independently read by a human member.
+
+- Section 4.1 and Appendix C.1: default protocol is a 5-layer, 100-neuron MLP, learning rate 1e-3, 20,000 epochs, 8,192 collocation and 2,048 boundary points for 2D problems, three repeats with mean and standard deviation. References from COMSOL FEM.
+- Section 4.1: success threshold is 10% L2 relative error. That is ten times looser than our 1e-2 target, so PINNacle success does not imply success at our targets.
+- Section 4.3 ablations: error saturates beyond about 2,048 collocation points on some problems and beyond 20k to 80k epochs; learning rate 1e-2 gives error spikes, 1e-5 is slow, and 1e-3 or 1e-4 or a step decay is more stable.
+- Section 4.2 and its appendix: "parametric PDE" experiments solve a separate PINN per parameter value and average the errors (for example domain scale L in {1, 2, 4, 8, 16} for Poisson2d-C). This is not a single network with parameters as inputs, so it is not evidence for our parametric design.
+- Section 4.1: only PINN with L-BFGS solved Heat-Nd; loss reweighting and resampling helped on some 2D heat and Poisson cases.

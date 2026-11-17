@@ -30,3 +30,15 @@ A peer-reviewed PINN versus finite-difference comparison at matched accuracy, wh
 ## Check status and gaps
 
 Venue, pages, and DOI confirmed in Crossref. Hardware, network size, and the exact accuracy metric were not read; get them from the full text before quoting the 32 hours against our setting. The problem is time-dependent Navier-Stokes, not steady diffusion.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods, setup, and cost passages through the Markdown cache (`scripts/to_markdown.py`). Not yet read by a human member. Source: arXiv:2205.14249 PDF, stored at `downloads/chuang-barba-2022-pinn-pitfalls/chuang-barba-2022-pinn-pitfalls.pdf`, SHA-256 cf4080c2a83f542b4a9ca9d76bb179dfeb8bdf202e310334f6673b6ddb4d74c1. The proceedings PDF was not compared line by line.
+
+- Section 3 (Taylor-Green setup): PINN built with NVIDIA Modulus; 6 hidden layers of 256 neurons, SiLU activation, Adam with PyTorch defaults and an exponential learning-rate decay; trained up to 1 million iterations on A100 GPUs. The authors "did not conduct hyperparameter optimization, given the computational cost".
+- Same section: 18,432 random residual points per iteration, drawn from 18,432,000 pre-generated points. Using more GPUs (more points per iteration) "did not accelerate the convergence".
+- Same section: the PINN used single precision, the finite-difference code (PetIBM) double precision; the authors say this does not change their conclusions.
+- Same section: training was stopped when they "considered that further training would not improve the accuracy", "without a quantitative criterion".
+- Errors were measured on a 512 x 512 mesh against the analytical solution; the PINN matched the 16 x 16 finite-difference run.
+
+Use for us: a stop rule must be quantitative and frozen; more points per step can cost energy without helping; state the floating-point type of both methods.

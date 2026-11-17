@@ -30,3 +30,12 @@ Justifies the failure-logging and seed rules in our plan and explains why the PI
 ## Check status and gaps
 
 Journal, volume, article number, DOI, and preprint verified via Crossref and the arXiv API. Gaps: abstract-level access only; read the full text before quoting the specific pathologies (ill-conditioned NTK, imbalanced eigenspectrum) or the fix details in the report.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods and training sections of the locally stored PDF (hash above matched on re-download). Not yet independently read by a human member.
+
+- Sections 3 to 5: in the infinite-width limit the PINN NTK stays near its initial value during training; the boundary block K_uu and residual block K_rr have very different eigenvalue scales, so the two loss terms converge at different rates (Definition 5.1, average convergence rate).
+- Section 5: PINNs also show spectral bias (slow learning of high-frequency parts).
+- Section 6, Algorithm 1: the weights lambda_b and lambda_r use the sums of NTK eigenvalues, computed as traces of the kernel blocks; the update can run every iteration or at a user-set interval (the text gives every 10 steps as an example). The kernel blocks need per-point Jacobians, which costs more than an ordinary gradient step; that interval is a cost setting to log if this method is used.
+- The analysis assumes infinite width; transfer to our small networks is an inference.

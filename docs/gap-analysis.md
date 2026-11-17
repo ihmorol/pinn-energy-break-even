@@ -108,6 +108,7 @@ From peer-reviewed sources alone: PINNs have been compared with classical solver
 4. Use Yang et al. 2024 and Khan et al. 2018 as the measurement references for GPU and CPU counters, next to Henderson et al. 2020.
 5. Fix [problem-definition.md](problem-definition.md) Section 2, point 2. It cites de Hoop et al. for "classical solvers win as the accuracy target tightens". Our check of de Hoop's cached text found FE only as a data/truth solver. Keep that claim on Huang and Stuart (preprint), and add Markidis 2021 and Chuang and Barba 2022 as peer-reviewed support for the accuracy-cost concern.
 6. Re-check the preprints for published versions before the final report.
+7. Done 2026-11-17: Chatain et al. 2025 moved from the shortlist to [background-papers.md](../references/background-papers.md) (unrefereed, not cited by any project document), so the first-search corpus is now 23 papers. Eight training-method papers were added as shortlist Tier E for the [training pipeline plan](training-pipeline.md).
 
 ## 6. Gaps in our own work
 
