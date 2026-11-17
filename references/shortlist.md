@@ -65,6 +65,14 @@ Added after a full-text read of the methods and training sections, for the [trai
 36. [Wu et al. (2023), CMAME 403](wu-2023-adaptive-sampling.md). Residual-point sampling compared: grid worst, low-discrepancy and resampling good for smooth solutions. Peer-reviewed support for our sampling choice.
 37. [Wang, Sankaran, Wang, Perdikaris (2023), arXiv:2308.08468](wang-2023-expert-guide.md). Preprint. A full training recipe (scaling, Adam settings, resampling, loss balancing). Used only where a peer-reviewed source agrees.
 
+## Tier F: 2025-2026 peer-reviewed additions for the gap analysis (added 2026-11-17)
+
+A search limited to papers published in 2025-2026 in journals or archival conferences (Crossref and OpenAlex, then the papers' own pages). Most recent PINN papers found were applications or method variants, not cost comparisons. These three are the ones that matter for our study beyond the 2025 training papers already in Tier E (Xu et al., Urbán et al.); others from the same search are in [background-papers.md](background-papers.md). Each has a note, no stored PDF.
+
+38. [Wang, Bhartari, Li, Perdikaris (2025), NeurIPS 38](wang-2025-pinn-gradient-alignment.md). Current state of the art for PINN training (second-order SOAP optimizer, 2-10x accuracy gains on 10 benchmarks). Keeps our PINN side from being a weak baseline; complements Urbán et al. 2025 on quasi-Newton optimizers.
+39. [Chung et al. (2025), ML.ENERGY Benchmark, NeurIPS 38](chung-2025-ml-energy-benchmark.md). Newest peer-reviewed inference-energy measurement method; settings alone changed energy by more than 40%.
+40. [Toscano et al. (2025), Machine Learning for Computational Science and Engineering 1](toscano-2025-pinns-to-pikans.md). Most cited recent PINN review; up-to-date companion to Karniadakis et al. 2021. No PINN-versus-classical cost comparison in the part read.
+
 ## Verified entries without a stored PDF (shortlist only)
 
 These were verified against Crossref, OpenAlex, or the arXiv API on 2026-11-12 but were not downloaded (no open-access PDF found, or the paper is supporting context only). Access is listed as the reason.
