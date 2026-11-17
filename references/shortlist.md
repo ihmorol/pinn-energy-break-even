@@ -42,6 +42,17 @@ Why not the most cited papers as core: Raissi et al. 2019 (~22,900 citations) de
 23. [Yoo et al. (2026), arXiv:2609.30580](yoo-2026-energy-inference.md). Metered joules for neural-operator inference with fixed clocks; reusable protocol idea.
 24. [Karniadakis et al. (2021), Nature Reviews Physics 3(6)](karniadakis-2021-physics-informed-ml.md). Authoritative field review (~10,150 citations); the introduction-context citation for the PINN research program. Local PDF is the DOE accepted manuscript.
 
+## Tier D: peer-reviewed additions (added 2026-11-17)
+
+Added after a second search limited to journals and archival conferences, done for the [gap analysis](../docs/gap-analysis.md). Each was verified in Crossref and has a note, but no stored PDF; notes record abstract-level access unless stated. Lower-relevance papers from the same search are kept in [background-papers.md](background-papers.md), not here.
+
+25. [McGreivy and Hakim (2024), Nature Machine Intelligence 6(10)](mcgreivy-hakim-2024-weak-baselines.md). Primary source for the 79% weak-baseline figure and the two fairness rules (equal accuracy or runtime; efficient numerical method). Replaces citing that figure through Huang et al. 2026.
+26. [Chuang and Barba (2022), Proc. SciPy 2022](chuang-barba-2022-pinn-pitfalls.md). PINN against finite differences at matched accuracy: about 32 hours of training against under 20 seconds. Time only.
+27. [Markidis (2021), Frontiers in Big Data 4](markidis-2021-pinn-linear-solvers.md). PINNs on Poisson against PETSc CG; slow high-frequency convergence. Closest peer-reviewed evidence for our equation type.
+28. [Wang, Wang, Perdikaris (2021), Science Advances 7(40)](wang-wang-perdikaris-2021-pi-deeponet.md). Physics-only training across a parameter family with no solver data; shows the parametric PINN itself is not our contribution.
+29. [Yang, Adamek, Armour (2024), SC24](yang-2024-nvml-power-sensor.md). nvidia-smi samples only 25% of runtime on A100 and H100; needed before trusting GPU joules. Promoted from the list below.
+30. [Khan et al. (2018), ACM TOMPECS 3(2)](khan-2018-rapl-in-action.md). RAPL readings are highly correlated with plug power; support for our CPU and DRAM counter.
+
 ## Verified entries without a stored PDF (shortlist only)
 
 These were verified against Crossref, OpenAlex, or the arXiv API on 2026-11-12 but were not downloaded (no open-access PDF found, or the paper is supporting context only). Access is listed as the reason.
@@ -52,7 +63,6 @@ These were verified against Crossref, OpenAlex, or the arXiv API on 2026-11-12 b
 - Anthony, Kanding, Selvan (2020), Carbontracker, arXiv:2007.03051, ~661 citations. Overlaps with the Lacoste and Henderson notes.
 - Wu et al. (2022), "Sustainable AI", MLSys 2022, arXiv:2111.00364, ~557 citations. Industry-scale context; not load-bearing for our protocol.
 - Novo and Terrés (2025), "Can neural networks learn finite elements?", J. Comput. Appl. Math. 453:116168, DOI 10.1016/j.cam.2024.116168, arXiv:2405.06488, ~3 citations. Numerical-analysis follow-up to Grossmann et al.
-- Yang, Adamek, Armour (2024), NVML power-sensor accuracy study, SC24, DOI 10.1109/SC41406.2024.00028, ~58 citations. No open-access PDF found. Read this before trusting nvidia-smi watt readings in the energy trials; it is likely to become a needed reference during the pilot.
 - Kirchdoerfer and Ortiz (2016), "Data-driven computational mechanics", CMAME 304:81-101, DOI 10.1016/j.cma.2016.02.001, ~834 citations. Background only; outside our fixed scope.
 - Li, Jiang, Song (2026), parametric PINN for microfluidic cooling, arXiv:2611.10666, 0 citations. Application-level example of the amortization narrative; not a benchmark.
 
