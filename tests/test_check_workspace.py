@@ -29,7 +29,7 @@ class WorkspaceChecksTests(unittest.TestCase):
             self.write(relative, "# Shared file\n" if relative.endswith(".md") else "")
         self.write("README.md", "# Project\n\n[Plan](docs/research-plan.md)\n")
         self.write("docs/research-plan.md", "# Research plan\n\n## Fixed scope\n")
-        for name in ("research-writing", "literature-check", "experiment-run", "research-review"):
+        for name in ("research-writing", "research-coding", "literature-check", "experiment-run", "research-review"):
             self.write(
                 f".agents/skills/{name}/SKILL.md",
                 f"---\nname: {name}\ndescription: Read the project rules for this task.\n---\n\n# Skill\n",

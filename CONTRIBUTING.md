@@ -64,7 +64,7 @@ Agents need authorization to commit, push, change repository settings, or publis
 | `.agents/skills/` | Shared instructions for recurring research tasks |
 | `scripts/`, `tests/` | Workspace checks and their tests |
 
-When the first pilot is implemented, add reusable solver and measurement code under `src/pinn_energy_break_even/`, runnable settings under `configs/`, and tests under `tests/`. Add those paths with actual files rather than empty scaffolding. Keep notebooks, if needed, for exploration; move reusable work into tested code.
+When the first pilot is implemented, add reusable solver and measurement code under `src/pinn_energy_break_even/`, runnable settings under `configs/`, and tests under `tests/`. Add those paths with actual files rather than empty scaffolding. Keep notebooks, if needed, for exploration; move reusable work into tested code. The [coding rules](docs/coding-rules.md) give the full layout and the rules all code follows.
 
 Write large generated outputs and checkpoints under `outputs/<run-id>/`, which Git ignores. Store each external download in its own new directory under `downloads/`, also ignored. Run processing scripts from a separate trusted location; use isolated Python for untrusted inputs. Do not execute code from a downloaded paper or archive without inspecting it and getting the required authorization.
 
@@ -82,4 +82,4 @@ git diff --check
 
 Add the relevant solver tests once research code exists. State what was checked, what failed, and what was skipped. Do not describe a passing workspace check as proof of scientific correctness.
 
-Check the prose against the writing guide, verify claims against their sources, and keep the proposal hashes unchanged. Use the PR checklist for evidence and energy accounting. Do not add a second handoff log, a session transcript, or the old topic-selection documents.
+Check code against the coding rules and the prose against the writing guide, verify claims against their sources, and keep the proposal hashes unchanged. Use the PR checklist for evidence and energy accounting. Do not add a second handoff log, a session transcript, or the old topic-selection documents.

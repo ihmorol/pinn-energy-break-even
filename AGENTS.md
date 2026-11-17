@@ -20,6 +20,10 @@ Apply [docs/writing-style.md](docs/writing-style.md) to all new prose: research 
 
 Do not add em dashes, empty praise, inflated claims, forced sentence patterns, or difficult words when a common word says the same thing. Keep necessary technical terms. Preserve exact quotations, titles, equations, code, citations, numerical values, and uncertainty. A style edit must not change the evidence or invent experience. Follow the teacher's AI-use and disclosure rules; natural writing is not a way to hide authorship.
 
+## Code stays small and checked
+
+Follow the [coding rules](docs/coding-rules.md) for all code and use the [research-coding skill](.agents/skills/research-coding/SKILL.md) for code tasks. Write the least code that fully solves the task. Comment only the reason the code cannot show. Keep run settings in config files, use one evaluation path for both methods, and test new logic.
+
 ## Research must be traceable
 
 - Keep measured results, estimates, hypotheses, and plans distinct. Never invent references, runs, data, plots, hardware access, or test outcomes.
