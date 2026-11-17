@@ -58,6 +58,8 @@ All DOIs below resolved in Crossref. "Checked claim" is what we read on a primar
 
 ## 4. Research gaps, rebuilt on peer-reviewed evidence
 
+The cell-by-cell evidence, with page and section locations and the published runtime ratios, is in [gap-evidence.md](gap-evidence.md).
+
 ### G1. No metered-energy comparison of a PINN against a classical solver at matched accuracy
 
 **Peer-reviewed evidence.** Every peer-reviewed PINN-versus-classical comparison we found measures time only: Grossmann et al. 2024 (FEM), Chuang and Barba 2022 (finite differences, 32 h versus under 20 s), and Markidis 2021 (PETSc CG). Wang, Wang, Perdikaris 2021 report speed, not energy. The peer-reviewed energy papers (Henderson, Strubell, Patterson, Luccioni, Dodge, MLPerf Power, Yang, Khan, Jay, Bouza, Anzt) cover ML or HPC workloads, not a PINN against a PDE solver.
