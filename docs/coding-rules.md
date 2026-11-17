@@ -52,7 +52,7 @@ These rules protect the comparison. Breaking one can change the result.
 - **Fail loudly.** No bare `except`, no silent skipping of NaN or infinite values. A diverged run raises or is recorded as failed; it is not dropped.
 - **Never overwrite evidence.** Write each run to a new `outputs/<run-id>/` folder and stop if it already exists.
 - **No numbers without a run.** Do not put result values in code, docs, or plots unless they came from a recorded run.
-- **Verify before measuring.** Check the 1D heat solver against its exact solution and the finite-difference solver's order of accuracy on a refined grid before any energy trial. Report a failed check; do not loosen the tolerance to pass it.
+- **Verify before measuring.** Check the 1D heat solver against its exact solution and the finite-difference solver's order of accuracy on a refined grid before any energy trial. Report a failed check; do not loosen the tolerance to pass it. The [convergence-study](../.agents/skills/convergence-study/SKILL.md) and [benchmark-and-mms-planner](../.agents/skills/benchmark-and-mms-planner/SKILL.md) skills help plan these checks.
 
 ## Tests
 
