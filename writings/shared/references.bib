@@ -1,0 +1,448 @@
+% Bibliography for the IEEE conference draft.
+% Source records: references/*.md (paper notes) and references/background-papers.md.
+% Preprints are marked as such in the note field.
+
+% IEEEtran.bst control: lists with more than six authors print as "et al."
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLuse_forced_etal       = "yes",
+  CTLmax_names_forced_etal = "6",
+  CTLnames_show_etal       = "1"
+}
+
+@article{raissi2019,
+  author  = {Raissi, M. and Perdikaris, P. and Karniadakis, G. E.},
+  title   = {Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations},
+  journal = {J. Comput. Phys.},
+  volume  = {378},
+  pages   = {686--707},
+  year    = {2019},
+  doi     = {10.1016/j.jcp.2018.10.045}
+}
+
+@article{karniadakis2021,
+  author  = {Karniadakis, George Em and Kevrekidis, Ioannis G. and Lu, Lu and Perdikaris, Paris and Wang, Sifan and Yang, Liu},
+  title   = {Physics-informed machine learning},
+  journal = {Nature Rev. Phys.},
+  volume  = {3},
+  number  = {6},
+  pages   = {422--440},
+  year    = {2021},
+  doi     = {10.1038/s42254-021-00314-5}
+}
+
+@article{cuomo2022,
+  author  = {Cuomo, Salvatore and Schiano di Cola, Vincenzo and Giampaolo, Fabio and Rozza, Gianluigi and Raissi, Maziar and Piccialli, Francesco},
+  title   = {Scientific machine learning through physics-informed neural networks: Where we are and what's next},
+  journal = {J. Sci. Comput.},
+  volume  = {92},
+  number  = {3},
+  pages   = {88},
+  year    = {2022},
+  doi     = {10.1007/s10915-022-01939-z}
+}
+
+@article{grossmann2024,
+  author  = {Grossmann, Tamara G. and Komorowska, Urszula Julia and Latz, Jonas and Sch{\"o}nlieb, Carola-Bibiane},
+  title   = {Can physics-informed neural networks beat the finite element method?},
+  journal = {IMA J. Appl. Math.},
+  volume  = {89},
+  number  = {1},
+  pages   = {143--174},
+  year    = {2024},
+  doi     = {10.1093/imamat/hxae011}
+}
+
+@inproceedings{chuang2022,
+  author    = {Chuang, Pi-Yueh and Barba, Lorena A.},
+  title     = {Experience report of physics-informed neural networks in fluid simulations: Pitfalls and frustration},
+  booktitle = {Proc. 21st Python in Science Conf. (SciPy 2022)},
+  pages     = {28--36},
+  year      = {2022},
+  doi       = {10.25080/majora-212e5952-005}
+}
+
+@article{markidis2021,
+  author  = {Markidis, Stefano},
+  title   = {The old and the new: Can physics-informed deep-learning replace traditional linear solvers?},
+  journal = {Front. Big Data},
+  volume  = {4},
+  pages   = {669097},
+  year    = {2021},
+  doi     = {10.3389/fdata.2021.669097}
+}
+
+@article{mcgreivy2024,
+  author  = {McGreivy, Nick and Hakim, Ammar},
+  title   = {Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations},
+  journal = {Nature Mach. Intell.},
+  volume  = {6},
+  number  = {10},
+  pages   = {1256--1269},
+  year    = {2024},
+  doi     = {10.1038/s42256-024-00897-5}
+}
+
+@article{wang2021deeponet,
+  author  = {Wang, Sifan and Wang, Hanwen and Perdikaris, Paris},
+  title   = {Learning the solution operator of parametric partial differential equations with physics-informed {DeepONets}},
+  journal = {Sci. Adv.},
+  volume  = {7},
+  number  = {40},
+  pages   = {eabi8605},
+  year    = {2021},
+  doi     = {10.1126/sciadv.abi8605}
+}
+
+@article{sun2020,
+  author  = {Sun, Luning and Gao, Han and Pan, Shaowu and Wang, Jian-Xun},
+  title   = {Surrogate modeling for fluid flows based on physics-constrained deep learning without simulation data},
+  journal = {Comput. Methods Appl. Mech. Eng.},
+  volume  = {361},
+  pages   = {112732},
+  year    = {2020},
+  doi     = {10.1016/j.cma.2019.112732}
+}
+
+@article{penwarden2023,
+  author  = {Penwarden, Michael and Zhe, Shandian and Narayan, Akil and Kirby, Robert M.},
+  title   = {A metalearning approach for physics-informed neural networks ({PINNs}): Application to parameterized {PDEs}},
+  journal = {J. Comput. Phys.},
+  volume  = {477},
+  pages   = {111912},
+  year    = {2023},
+  doi     = {10.1016/j.jcp.2023.111912}
+}
+
+@article{dehoop2022,
+  author  = {de Hoop, Maarten V. and Huang, Daniel Zhengyu and Qian, Elizabeth and Stuart, Andrew M.},
+  title   = {The cost-accuracy trade-off in operator learning with neural networks},
+  journal = {J. Mach. Learn.},
+  volume  = {1},
+  number  = {3},
+  pages   = {299--341},
+  year    = {2022},
+  doi     = {10.4208/jml.220509}
+}
+
+@misc{huang2026review,
+  author       = {Huang, Yingchao and Wang, Xin and Yao, Shanshan and Zeng, Fanhua and Peng, Wei},
+  title        = {Classical, machine learning, and hybrid solvers for partial differential equations: An evidence-weighted review and decision framework},
+  howpublished = {arXiv:2610.32911},
+  note         = {Preprint},
+  year         = {2026}
+}
+
+@misc{huangstuart2026,
+  author       = {Huang, Daniel Zhengyu and Stuart, Andrew M.},
+  title        = {Cost-accuracy trade-offs: Neural operator vs classical numerical solver},
+  howpublished = {arXiv:2609.24021},
+  note         = {Preprint},
+  year         = {2026}
+}
+
+@article{wang2021gradient,
+  author  = {Wang, Sifan and Teng, Yujun and Perdikaris, Paris},
+  title   = {Understanding and mitigating gradient flow pathologies in physics-informed neural networks},
+  journal = {SIAM J. Sci. Comput.},
+  volume  = {43},
+  number  = {5},
+  pages   = {A3055--A3081},
+  year    = {2021},
+  doi     = {10.1137/20M1318043}
+}
+
+@article{wang2022ntk,
+  author  = {Wang, Sifan and Yu, Xinling and Perdikaris, Paris},
+  title   = {When and why {PINNs} fail to train: A neural tangent kernel perspective},
+  journal = {J. Comput. Phys.},
+  volume  = {449},
+  pages   = {110768},
+  year    = {2022},
+  doi     = {10.1016/j.jcp.2021.110768}
+}
+
+@inproceedings{krishnapriyan2021,
+  author    = {Krishnapriyan, Aditi and Gholami, Amir and Zhe, Shandian and Kirby, Robert and Mahoney, Michael W.},
+  title     = {Characterizing possible failure modes in physics-informed neural networks},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  volume    = {34},
+  pages     = {26548--26560},
+  year      = {2021}
+}
+
+@article{mishra2022,
+  author  = {Mishra, Siddhartha and Molinaro, Roberto},
+  title   = {Estimates on the generalization error of physics-informed neural networks for approximating {PDEs}},
+  journal = {IMA J. Numer. Anal.},
+  volume  = {43},
+  number  = {1},
+  pages   = {1--43},
+  year    = {2023},
+  doi     = {10.1093/imanum/drab093}
+}
+
+@inproceedings{hao2024,
+  author    = {Hao, Zhongkai and Yao, Jiachen and Su, Chang and Su, Hang and Wang, Ziao and Lu, Fanzhi and Xia, Zeyu and Zhang, Yichi and Liu, Songming and Lu, Lu and Zhu, Jun},
+  title     = {{PINNacle}: A comprehensive benchmark of physics-informed neural networks for solving {PDEs}},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS), Datasets and Benchmarks Track},
+  volume    = {37},
+  pages     = {76721--76774},
+  year      = {2024},
+  doi       = {10.52202/079017-2442}
+}
+
+@inproceedings{strubell2019,
+  author    = {Strubell, Emma and Ganesh, Ananya and McCallum, Andrew},
+  title     = {Energy and policy considerations for deep learning in {NLP}},
+  booktitle = {Proc. 57th Annu. Meeting Assoc. Comput. Linguistics (ACL)},
+  pages     = {3645--3650},
+  year      = {2019},
+  doi       = {10.18653/v1/P19-1355}
+}
+
+@article{schwartz2020,
+  author  = {Schwartz, Roy and Dodge, Jesse and Smith, Noah A. and Etzioni, Oren},
+  title   = {Green {AI}},
+  journal = {Commun. ACM},
+  volume  = {63},
+  number  = {12},
+  pages   = {54--63},
+  year    = {2020},
+  doi     = {10.1145/3381831}
+}
+
+@article{patterson2022,
+  author  = {Patterson, David and Gonzalez, Joseph and H{\"o}lzle, Urs and Le, Quoc and Liang, Chen and Munguia, Lluis-Miquel and Rothchild, Daniel and So, David R. and Texier, Maud and Dean, Jeff},
+  title   = {The carbon footprint of machine learning training will plateau, then shrink},
+  journal = {Computer},
+  volume  = {55},
+  number  = {7},
+  pages   = {18--28},
+  year    = {2022},
+  doi     = {10.1109/MC.2022.3148714}
+}
+
+@inproceedings{luccioni2024,
+  author    = {Luccioni, Alexandra Sasha and Jernite, Yacine and Strubell, Emma},
+  title     = {Power hungry processing: Watts driving the cost of {AI} deployment?},
+  booktitle = {Proc. ACM Conf. Fairness, Accountability, and Transparency (FAccT)},
+  pages     = {85--99},
+  year      = {2024},
+  doi       = {10.1145/3630106.3658542}
+}
+
+@article{henderson2020,
+  author  = {Henderson, Peter and Hu, Jieru and Romoff, Joshua and Brunskill, Emma and Jurafsky, Dan and Pineau, Joelle},
+  title   = {Towards the systematic reporting of the energy and carbon footprints of machine learning},
+  journal = {J. Mach. Learn. Res.},
+  volume  = {21},
+  number  = {248},
+  pages   = {1--43},
+  year    = {2020}
+}
+
+@misc{lacoste2019,
+  author       = {Lacoste, Alexandre and Luccioni, Alexandra and Schmidt, Victor and Dandres, Thomas},
+  title        = {Quantifying the carbon emissions of machine learning},
+  howpublished = {arXiv:1910.09700},
+  note         = {{NeurIPS} 2019 Workshop on Tackling Climate Change with Machine Learning (non-archival)},
+  year         = {2019}
+}
+
+@inproceedings{dodge2022,
+  author    = {Dodge, Jesse and Prewitt, Taylor and Tachet des Combes, Remi and Odmark, Erika and Schwartz, Roy and Strubell, Emma and Luccioni, Alexandra Sasha and Smith, Noah A. and DeCario, Nicole and Buchanan, Will},
+  title     = {Measuring the carbon intensity of {AI} in cloud instances},
+  booktitle = {Proc. ACM Conf. Fairness, Accountability, and Transparency (FAccT)},
+  pages     = {1877--1894},
+  year      = {2022},
+  doi       = {10.1145/3531146.3533234}
+}
+
+@inproceedings{mlperfpower2025,
+  author    = {Tschand, Arya and Rajan, Arun Tejusve Raghunath and Idgunji, Sachin and Ghosh, Anirban and Holleman, Jeremy and Kiraly, Csaba and Ambalkar, Pawan and Borkar, Ritika and Chukka, Ramesh and Cockrell, Trevor and Curtis, Oliver and Fursin, Grigori and Hodak, Miro and Kassa, Hiwot and Lokhmotov, Anton and Miskovic, Dejan and Pan, Yuechao and Manmathan, Manu Prasad and Raymond, Liz and St. John, Tom and Suresh, Arjun and Taubitz, Rowan and Zhan, Sean and Wasson, Scott and Kanter, David and Reddi, Vijay Janapa},
+  title     = {{MLPerf Power}: Benchmarking the energy efficiency of machine learning systems from microwatts to megawatts for sustainable {AI}},
+  booktitle = {Proc. IEEE Int. Symp. High Perform. Comput. Archit. (HPCA)},
+  pages     = {1201--1216},
+  year      = {2025},
+  doi       = {10.1109/HPCA61900.2025.00092}
+}
+
+@article{khan2018,
+  author  = {Khan, Kashif Nizam and Hirki, Mikael and Niemi, Tapio and Nurminen, Jukka K. and Ou, Zhonghong},
+  title   = {{RAPL} in action},
+  journal = {ACM Trans. Model. Perform. Eval. Comput. Syst.},
+  volume  = {3},
+  number  = {2},
+  pages   = {1--26},
+  year    = {2018},
+  doi     = {10.1145/3177754}
+}
+
+@inproceedings{yang2024,
+  author    = {Yang, Zeyu and Adamek, Karel and Armour, Wesley},
+  title     = {Accurate and convenient energy measurements for {GPUs}: A detailed study of {NVIDIA} {GPU}'s built-in power sensor},
+  booktitle = {Proc. Int. Conf. High Perform. Comput., Netw., Storage Anal. (SC24)},
+  pages     = {1--17},
+  year      = {2024},
+  doi       = {10.1109/SC41406.2024.00028}
+}
+
+@inproceedings{jay2023,
+  author    = {Jay, Mathilde and Ostapenco, Vladimir and Lef{\`e}vre, Laurent and Trystram, Denis and Orgerie, Anne-C{\'e}cile and Fichel, Benjamin},
+  title     = {An experimental comparison of software-based power meters: Focus on {CPU} and {GPU}},
+  booktitle = {Proc. IEEE/ACM 23rd Int. Symp. Cluster, Cloud Internet Comput. (CCGrid)},
+  pages     = {106--118},
+  year      = {2023},
+  doi       = {10.1109/CCGrid57682.2023.00020}
+}
+
+@article{bouza2023,
+  author  = {Bouza, Lucia and Bugeau, Aur{\'e}lie and Lannelongue, Lo{\"\i}c},
+  title   = {How to estimate carbon footprint when training deep learning models? {A} guide and review},
+  journal = {Environ. Res. Commun.},
+  volume  = {5},
+  number  = {11},
+  pages   = {115014},
+  year    = {2023},
+  doi     = {10.1088/2515-7620/acf81b}
+}
+
+@article{anzt2017,
+  author  = {Anzt, Hartwig and Tomov, Stanimire and Dongarra, Jack},
+  title   = {On the performance and energy efficiency of sparse linear algebra on {GPUs}},
+  journal = {Int. J. High Perform. Comput. Appl.},
+  volume  = {31},
+  number  = {5},
+  pages   = {375--390},
+  year    = {2017},
+  doi     = {10.1177/1094342016672081}
+}
+
+@book{hesthaven2016,
+  author    = {Hesthaven, Jan S. and Rozza, Gianluigi and Stamm, Benjamin},
+  title     = {Certified Reduced Basis Methods for Parametrized Partial Differential Equations},
+  series    = {SpringerBriefs in Mathematics},
+  publisher = {Springer},
+  address   = {Cham, Switzerland},
+  year      = {2016},
+  doi       = {10.1007/978-3-319-22470-1}
+}
+
+@misc{wilson2025,
+  author       = {Wilson, Sophia N. and Christensen, Jens Hesselbjerg and Selvan, Raghavendra},
+  title        = {Performance-carbon trade-offs across architectural biases in shear flow forecasting},
+  howpublished = {arXiv:2509.24517},
+  note         = {Preprint},
+  year         = {2025}
+}
+
+@misc{yoo2026,
+  author       = {Yoo, Jason and Roy, Samrendra and Chakraborty, Souvik and Alam, Syed Bahauddin},
+  title        = {Energy-efficient operation of neural operators for virtual sensing},
+  howpublished = {arXiv:2609.30580},
+  note         = {Preprint},
+  year         = {2026}
+}
+
+@misc{kapoor2025,
+  author       = {Kapoor, Taniya and Chandra, Abhishek and Stamou, Anastasios and Roberts, Stephen J.},
+  title        = {Beyond accuracy: {EcoL2} metric for sustainable neural {PDE} solvers},
+  howpublished = {arXiv:2505.12556},
+  note         = {Preprint},
+  year         = {2025}
+}
+
+% Added 2026-11-17 from shortlist Tiers E and F and the background list (PRs #8 and #9).
+
+@inproceedings{rathore2024,
+  author    = {Rathore, Pratik and Lei, Weimu and Frangella, Zachary and Lu, Lu and Udell, Madeleine},
+  title     = {Challenges in training {PINNs}: A loss landscape perspective},
+  booktitle = {Proc. 41st Int. Conf. Mach. Learn. (ICML)},
+  series    = {PMLR},
+  volume    = {235},
+  year      = {2024}
+}
+
+@inproceedings{xu2025,
+  author    = {Xu, Chenhui and Liu, Dancheng and Nassereldine, Amir and Xiong, Jinjun},
+  title     = {{FP64} is all you need: Rethinking failure modes in physics-informed neural networks},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  volume    = {38},
+  year      = {2025}
+}
+
+@article{sukumar2022,
+  author  = {Sukumar, N. and Srivastava, Ankit},
+  title   = {Exact imposition of boundary conditions with distance functions in physics-informed deep neural networks},
+  journal = {Comput. Methods Appl. Mech. Eng.},
+  volume  = {389},
+  pages   = {114333},
+  year    = {2022},
+  doi     = {10.1016/j.cma.2021.114333}
+}
+
+@article{urban2025,
+  author  = {Urb{\'a}n, Jorge F. and Stefanou, Petros and Pons, Jos{\'e} A.},
+  title   = {Unveiling the optimization process of physics informed neural networks: How accurate and competitive can {PINNs} be?},
+  journal = {J. Comput. Phys.},
+  volume  = {523},
+  pages   = {113656},
+  year    = {2025},
+  doi     = {10.1016/j.jcp.2024.113656}
+}
+
+@inproceedings{deryck2024,
+  author    = {De Ryck, Tim and Bonnet, Florent and Mishra, Siddhartha and de B{\'e}zenac, Emmanuel},
+  title     = {An operator preconditioning perspective on training in physics-informed machine learning},
+  booktitle = {Proc. Int. Conf. Learn. Represent. (ICLR)},
+  year      = {2024}
+}
+
+@article{wu2023,
+  author  = {Wu, Chenxi and Zhu, Min and Tan, Qinyang and Kartha, Yadhu and Lu, Lu},
+  title   = {A comprehensive study of non-adaptive and residual-based adaptive sampling for physics-informed neural networks},
+  journal = {Comput. Methods Appl. Mech. Eng.},
+  volume  = {403},
+  pages   = {115671},
+  year    = {2023},
+  doi     = {10.1016/j.cma.2022.115671}
+}
+
+@inproceedings{wang2025soap,
+  author    = {Wang, Sifan and Bhartari, Ananyae and Li, Bowen and Perdikaris, Paris},
+  title     = {Gradient alignment in physics-informed neural networks: A second-order optimization perspective},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)},
+  volume    = {38},
+  pages     = {186682--186732},
+  year      = {2025},
+  doi       = {10.52202/085713-5615}
+}
+
+@inproceedings{chung2025,
+  author    = {Chung, Jae-Won and Ma, Jeff J. and Wu, Ruofan and Liu, Jiachen and Kweon, Oh Jun and Xia, Yuxuan and Wu, Zhiyu and Chowdhury, Mosharaf},
+  title     = {The {ML.ENERGY} benchmark: Toward automated inference energy measurement and optimization},
+  booktitle = {Proc. Adv. Neural Inf. Process. Syst. (NeurIPS), Datasets and Benchmarks Track},
+  volume    = {38},
+  pages     = {121191--121219},
+  year      = {2025},
+  doi       = {10.52202/085713-3652}
+}
+
+@article{toscano2025,
+  author  = {Toscano, Juan Diego and Oommen, Vivek and Varghese, Alan John and Zou, Zongren and Ahmadi Daryakenari, Nazanin and Wu, Chenxi and Karniadakis, George Em},
+  title   = {From {PINNs} to {PIKANs}: Recent advances in physics-informed machine learning},
+  journal = {Mach. Learn. Comput. Sci. Eng.},
+  volume  = {1},
+  number  = {1},
+  pages   = {15},
+  year    = {2025},
+  doi     = {10.1007/s44379-025-00015-1}
+}
+
+@misc{zhang2026,
+  author       = {Zhang, Yijing and Roberts, Nicholas and Marwah, Tanya and Khodak, Mikhail},
+  title        = {Breakeven complexity: A new perspective on neural partial differential equation solvers},
+  howpublished = {arXiv:2605.15399},
+  note         = {Preprint},
+  year         = {2026}
+}
