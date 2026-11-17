@@ -29,3 +29,14 @@ Peer-reviewed precedent for the setup our PINN uses: physics-only training acros
 ## Check status and gaps
 
 Venue, issue, and DOI confirmed in Crossref. The PDEs, hardware, baseline solvers, training times, and whether the "three orders" figure includes training were not read; read the full text before quoting. This is an operator network, not the plain MLP PINN in our plan.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods, setup, and cost passages through the Markdown cache (`scripts/to_markdown.py`). Not yet read by a human member. Source: arXiv:2103.10974 preprint PDF, stored at `downloads/wang-wang-perdikaris-2021-pi-deeponet/wang-wang-perdikaris-2021-pi-deeponet.pdf`, SHA-256 7c3ab418cbab0a449556b28b68e2abc5f43ec4e31cfe1309e336031760bc1b43.
+
+- Section 4 setup: tanh activations, Adam with default settings, batch size 10,000, exponential learning-rate decay of 0.9 every 1,000 iterations; 40,000 iterations for most examples and 300,000 for a harder one (with Fourier features).
+- Section 4.3 (Burgers): a loss weight lambda was tuned over {1, 5, 10, 20, 50, 100} and two architectures were compared; the best test error was obtained with the modified MLP and lambda = 20. That tuning is part of the method's real cost.
+- Appendix C, Table 8: training times on one V100 range from 0.03 to 9.25 hours across the benchmarks; physics-informed training is slower than data-driven DeepONet training because of the residual graph.
+- Section 4.3 and Appendix C: the "up to three orders of magnitude faster" figure compares inference with a spectral solver; training time is reported separately and not included in that speedup.
+
+Use for us: a direct example of why setup cost S_P and per-query cost e_P must stay separate. A per-query speedup says nothing about break-even on its own.

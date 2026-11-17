@@ -13,7 +13,7 @@ Before using either source to support a new claim, resolve its identifier, confi
 
 ## Checked corpus and shortlist
 
-The [literature shortlist](shortlist.md) ranks the verified corpus (24 papers with stored PDFs and notes, six peer-reviewed additions with notes but no stored PDF, plus verified entries without PDFs) and names the three core papers the work starts from. Lower-relevance papers kept for possible later use are in [background-papers.md](background-papers.md), with short context and no notes. Each paper note in this directory records what was read, the local file location under the ignored `downloads/` path, and the SHA-256 hash. Notes with abstract-level access only say so; their claims must not be quoted in the report until the full text is read.
+The [literature shortlist](shortlist.md) ranks the verified corpus (23 papers from the first search, six peer-reviewed additions in Tier D, and eight training-method papers in Tier E, all with notes, plus verified entries without PDFs) and names the three core papers the work starts from. Lower-relevance papers kept for possible later use are in [background-papers.md](background-papers.md), with short context and no notes. Each paper note in this directory records what was read, the local file location under the ignored `downloads/` path, and the SHA-256 hash. Notes with abstract-level access only say so; their claims must not be quoted in the report until the full text is read.
 
 ## Add a paper note
 

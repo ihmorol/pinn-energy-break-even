@@ -30,3 +30,12 @@ A second, independent account of why PINN training cost is unstable and method-s
 ## Check status and gaps
 
 Journal, volume, pages, DOI, and preprint verified via Crossref and the arXiv API. Gaps: abstract-level access only; the 50-100x accuracy figure is the authors' own claim, to be quoted with attribution and not generalized to our problem without our own measurements.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods and training sections of the locally stored PDF (hash above matched on re-download). Not yet independently read by a human member.
+
+- Section 2.2: a 4-layer, 50-neuron tanh PINN trained 40,000 Adam steps (learning rate 1e-3 with decay) on 2D Helmholtz fits the boundary poorly. The text reports 15.7% relative L2 error and the Figure 1 caption reports 1.81e-01; the two values differ in the source.
+- Section 2.4: the largest Hessian eigenvalue of the loss grows during training, and the residual term dominates it (eigenvalues up to about 1e5). Stable gradient descent needs learning rate below 2 / sigma_max, so stiffness limits the step size.
+- Section 2.5, Algorithm 1: lambda_hat_i = max over theta of |grad L_r| divided by the mean of |lambda_i grad L_i|; update lambda_i = (1 - alpha) lambda_i + alpha lambda_hat_i with recommended alpha = 0.9 and learning rate 1e-3. Note that the later expert guide writes the moving average the other way round (alpha on the old value); copy one convention exactly.
+- Helmholtz table comparing models M1 to M4 (Section 3.1): the plain PINN (M1) error stays near 1e-1 across 30 to 100 units and 3 to 7 layers; annealing plus the modified architecture (M4) reaches about 1.6e-3 to 1.1e-2. Trained in single precision with mini-batch 128, weights updated every 10 iterations.

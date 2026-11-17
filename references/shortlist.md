@@ -17,41 +17,53 @@ Why not the most cited papers as core: Raissi et al. 2019 (~22,900 citations) de
 4. [Raissi, Perdikaris, Karniadakis (2019), J. Comput. Phys. 378](raissi-2019-pinn.md). Foundational PINN paper; defines the method under test. Local PDF is the Part I preprint, not the published text (recorded in the note).
 5. [de Hoop, Huang, Qian, Stuart (2022), J. Mach. Learn. 1(1)](dehoop-2022-cost-accuracy.md). The cost-accuracy frame for parametric surrogates; justifies matched accuracy as the fair basis.
 6. [Huang and Stuart (2026), arXiv:2609.24021](huang-stuart-2026-cost-accuracy.md). Closest published design analog in the post-training amortized regime; finds classical solvers win as accuracy tightens. Unrefereed preprint.
-7. [Chatain et al. (2025), arXiv:2507.21269](chatain-2025-numeric-outperform.md). Classical discretization embedded in learning cuts training cost by 10-20x epochs against neural baselines.
-8. [Kapoor et al. (2025), arXiv:2505.12556, EcoL2](kapoor-2025-ecol2.md). Accuracy-versus-emissions metric across data, training, and deployment for neural PDE solvers.
+7. [Kapoor et al. (2025), arXiv:2505.12556, EcoL2](kapoor-2025-ecol2.md). Accuracy-versus-emissions metric across data, training, and deployment for neural PDE solvers.
 
 ## Tier B: PINN training cost, failure modes, and accuracy targets (solution design)
 
-9. [Wang, Yu, Perdikaris (2022), J. Comput. Phys. 449](wang-2022-pinn-ntk-failure.md). NTK analysis of why PINNs fail to train; justifies seed variance and failure logging in the protocol.
-10. [Wang, Teng, Perdikaris (2021), SIAM J. Sci. Comput. 43(5)](wang-2021-gradient-pathologies.md). Gradient pathologies and mitigations; mitigation costs belong in the ledger.
-11. [Krishnapriyan et al. (2021), NeurIPS 2021](krishnapriyan-2021-failure-modes.md). Failure modes on diffusion operators; motivates the accuracy gate.
-12. [Mishra and Molinaro (2022), IMA J. Numer. Anal. 43(1)](mishra-molinaro-2022-generalization.md). Generalization error bounds; anchors the fixed collocation budget and accuracy rule.
-13. [Hao et al. (2024), NeurIPS 2024 D&B, PINNacle](hao-2024-pinnacle.md). Matched-condition benchmark design reference.
-14. [Cuomo et al. (2022), J. Sci. Comput. 92(3)](cuomo-2022-pinn-survey.md). Field survey for the introduction.
+8. [Wang, Yu, Perdikaris (2022), J. Comput. Phys. 449](wang-2022-pinn-ntk-failure.md). NTK analysis of why PINNs fail to train; justifies seed variance and failure logging in the protocol.
+9. [Wang, Teng, Perdikaris (2021), SIAM J. Sci. Comput. 43(5)](wang-2021-gradient-pathologies.md). Gradient pathologies and mitigations; mitigation costs belong in the ledger.
+10. [Krishnapriyan et al. (2021), NeurIPS 2021](krishnapriyan-2021-failure-modes.md). Failure modes on diffusion operators; motivates the accuracy gate.
+11. [Mishra and Molinaro (2022), IMA J. Numer. Anal. 43(1)](mishra-molinaro-2022-generalization.md). Generalization error bounds; anchors the fixed collocation budget and accuracy rule.
+12. [Hao et al. (2024), NeurIPS 2024 D&B, PINNacle](hao-2024-pinnacle.md). Matched-condition benchmark design reference.
+13. [Cuomo et al. (2022), J. Sci. Comput. 92(3)](cuomo-2022-pinn-survey.md). Field survey for the introduction.
 
 ## Tier C: energy measurement and green computing context (protocol and introduction)
 
-15. [Strubell, Ganesh, McCallum (2019), ACL P19-1355](strubell-2019-energy-policy.md). Origin of ML energy accounting; canonical measured-power-then-extrapolate example.
-16. [Schwartz et al. (2020), CACM 63(12), Green AI](schwartz-2020-green-ai.md). Efficiency as an evaluation criterion; the framing for our report.
-17. [Lacoste et al. (2019), arXiv:1910.09700](lacoste-2019-carbon-emissions.md). Modeled-emission calculator (CodeCarbon ancestor); reference for the "modeled estimate" label.
-18. [Patterson et al. (2022), IEEE Computer 55(7)](patterson-2022-carbon-plateau.md). Publishing emissions catches estimates off by 100x-100,000x; inference share context.
-19. [Luccioni et al. (2024), FAccT 2024](luccioni-2024-power-hungry.md). Deployment energy per 1,000 inferences; per-query cost deserves measurement care.
-20. [Dodge et al. (2022), FAccT 2022](dodge-2022-carbon-cloud.md). Location- and time-specific carbon factors; how to label any carbon conversion we report.
-21. [Reddi et al. (2024), MLPerf Power, HPCA 2025](mlperf-power-2024.md). Standardized power benchmarking rules; discipline reference for our energy trials.
-22. [Wilson et al. (2025), arXiv:2509.24517](wilson-2025-carbon-forecasting.md). Runtime alone is an unreliable proxy for carbon in PDE forecasting; supports measuring both.
-23. [Yoo et al. (2026), arXiv:2609.30580](yoo-2026-energy-inference.md). Metered joules for neural-operator inference with fixed clocks; reusable protocol idea.
-24. [Karniadakis et al. (2021), Nature Reviews Physics 3(6)](karniadakis-2021-physics-informed-ml.md). Authoritative field review (~10,150 citations); the introduction-context citation for the PINN research program. Local PDF is the DOE accepted manuscript.
+14. [Strubell, Ganesh, McCallum (2019), ACL P19-1355](strubell-2019-energy-policy.md). Origin of ML energy accounting; canonical measured-power-then-extrapolate example.
+15. [Schwartz et al. (2020), CACM 63(12), Green AI](schwartz-2020-green-ai.md). Efficiency as an evaluation criterion; the framing for our report.
+16. [Lacoste et al. (2019), arXiv:1910.09700](lacoste-2019-carbon-emissions.md). Modeled-emission calculator (CodeCarbon ancestor); reference for the "modeled estimate" label.
+17. [Patterson et al. (2022), IEEE Computer 55(7)](patterson-2022-carbon-plateau.md). Publishing emissions catches estimates off by 100x-100,000x; inference share context.
+18. [Luccioni et al. (2024), FAccT 2024](luccioni-2024-power-hungry.md). Deployment energy per 1,000 inferences; per-query cost deserves measurement care.
+19. [Dodge et al. (2022), FAccT 2022](dodge-2022-carbon-cloud.md). Location- and time-specific carbon factors; how to label any carbon conversion we report.
+20. [Reddi et al. (2024), MLPerf Power, HPCA 2025](mlperf-power-2024.md). Standardized power benchmarking rules; discipline reference for our energy trials.
+21. [Wilson et al. (2025), arXiv:2509.24517](wilson-2025-carbon-forecasting.md). Runtime alone is an unreliable proxy for carbon in PDE forecasting; supports measuring both.
+22. [Yoo et al. (2026), arXiv:2609.30580](yoo-2026-energy-inference.md). Metered joules for neural-operator inference with fixed clocks; reusable protocol idea.
+23. [Karniadakis et al. (2021), Nature Reviews Physics 3(6)](karniadakis-2021-physics-informed-ml.md). Authoritative field review (~10,150 citations); the introduction-context citation for the PINN research program. Local PDF is the DOE accepted manuscript.
 
 ## Tier D: peer-reviewed additions (added 2026-11-17)
 
 Added after a second search limited to journals and archival conferences, done for the [gap analysis](../docs/gap-analysis.md). Each was verified in Crossref and has a note, but no stored PDF; notes record abstract-level access unless stated. Lower-relevance papers from the same search are kept in [background-papers.md](background-papers.md), not here.
 
-25. [McGreivy and Hakim (2024), Nature Machine Intelligence 6(10)](mcgreivy-hakim-2024-weak-baselines.md). Primary source for the 79% weak-baseline figure and the two fairness rules (equal accuracy or runtime; efficient numerical method). Replaces citing that figure through Huang et al. 2026.
-26. [Chuang and Barba (2022), Proc. SciPy 2022](chuang-barba-2022-pinn-pitfalls.md). PINN against finite differences at matched accuracy: about 32 hours of training against under 20 seconds. Time only.
-27. [Markidis (2021), Frontiers in Big Data 4](markidis-2021-pinn-linear-solvers.md). PINNs on Poisson against PETSc CG; slow high-frequency convergence. Closest peer-reviewed evidence for our equation type.
-28. [Wang, Wang, Perdikaris (2021), Science Advances 7(40)](wang-wang-perdikaris-2021-pi-deeponet.md). Physics-only training across a parameter family with no solver data; shows the parametric PINN itself is not our contribution.
-29. [Yang, Adamek, Armour (2024), SC24](yang-2024-nvml-power-sensor.md). nvidia-smi samples only 25% of runtime on A100 and H100; needed before trusting GPU joules. Promoted from the list below.
-30. [Khan et al. (2018), ACM TOMPECS 3(2)](khan-2018-rapl-in-action.md). RAPL readings are highly correlated with plug power; support for our CPU and DRAM counter.
+24. [McGreivy and Hakim (2024), Nature Machine Intelligence 6(10)](mcgreivy-hakim-2024-weak-baselines.md). Primary source for the 79% weak-baseline figure and the two fairness rules (equal accuracy or runtime; efficient numerical method). Replaces citing that figure through Huang et al. 2026.
+25. [Chuang and Barba (2022), Proc. SciPy 2022](chuang-barba-2022-pinn-pitfalls.md). PINN against finite differences at matched accuracy: about 32 hours of training against under 20 seconds. Time only.
+26. [Markidis (2021), Frontiers in Big Data 4](markidis-2021-pinn-linear-solvers.md). PINNs on Poisson against PETSc CG; slow high-frequency convergence. Closest peer-reviewed evidence for our equation type.
+27. [Wang, Wang, Perdikaris (2021), Science Advances 7(40)](wang-wang-perdikaris-2021-pi-deeponet.md). Physics-only training across a parameter family with no solver data; shows the parametric PINN itself is not our contribution.
+28. [Yang, Adamek, Armour (2024), SC24](yang-2024-nvml-power-sensor.md). nvidia-smi samples only 25% of runtime on A100 and H100; needed before trusting GPU joules. Promoted from the list below.
+29. [Khan et al. (2018), ACM TOMPECS 3(2)](khan-2018-rapl-in-action.md). RAPL readings are highly correlated with plug power; support for our CPU and DRAM counter.
+
+## Tier E: how to train and check the PINN (added 2026-11-17)
+
+Added after a full-text read of the methods and training sections, for the [training pipeline plan](../docs/training-pipeline.md). Identifiers were checked against the arXiv API and, where a DOI exists, Crossref. PDFs are stored under `downloads/` with hashes in each note. These papers decide training settings and failure handling; none of them measures energy. Papers already in Tier D (McGreivy and Hakim 2024) were not added twice.
+
+30. [Rathore et al. (2024), ICML 2024](rathore-2024-loss-landscape.md). The PINN loss is ill-conditioned because of the differential operator; Adam then L-BFGS beats either alone; L-BFGS often stops early. Main support for our optimizer schedule and stop-reason logging.
+31. [Xu et al. (2025), NeurIPS 2025](xu-2025-fp64.md). In FP32, PyTorch L-BFGS stops on rounding noise; FP64 removes the failure modes on their benchmarks. Decides how we check precision in the pilot.
+32. [Sukumar and Srivastava (2022), CMAME 389](sukumar-2022-exact-bc.md). Exact Dirichlet conditions through a distance-function multiplier. Support for Candidate A in [model-equations.md](../docs/model-equations.md).
+33. [Sun, Gao, Pan, Wang (2020), CMAME 361](sun-2020-surrogate-no-data.md). Parametric PINN with parameters as inputs, no solver data, hard Dirichlet conditions: the same design as ours. Promoted from the background list.
+34. [Urbán, Stefanou, Pons (2025), J. Comput. Phys. 523](urban-2025-optimization.md). Small networks (2 to 3 layers of 20 to 30) reach high accuracy with better quasi-Newton optimizers. Bears on network size and so on query energy.
+35. [De Ryck et al. (2024), ICLR 2024](deryck-2024-operator-preconditioning.md). Training iterations grow with operator conditioning and with tighter tolerance in a linear model. A prediction for how S_P moves between targets.
+36. [Wu et al. (2023), CMAME 403](wu-2023-adaptive-sampling.md). Residual-point sampling compared: grid worst, low-discrepancy and resampling good for smooth solutions. Peer-reviewed support for our sampling choice.
+37. [Wang, Sankaran, Wang, Perdikaris (2023), arXiv:2308.08468](wang-2023-expert-guide.md). Preprint. A full training recipe (scaling, Adam settings, resampling, loss balancing). Used only where a peer-reviewed source agrees.
 
 ## Verified entries without a stored PDF (shortlist only)
 

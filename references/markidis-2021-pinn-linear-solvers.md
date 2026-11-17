@@ -30,3 +30,15 @@ Poisson is the constant-coefficient case of our steady-diffusion problem, so thi
 ## Check status and gaps
 
 Venue and DOI confirmed in Crossref. Grid sizes, timings, hardware, and error levels were not read; read the open-access full text before quoting any number. The hybrid solvers are outside our fixed scope and are cited as context only.
+
+## Full-text methods check, 2026-11-17
+
+Reader: Claude Code AI agent; targeted read of the methods, setup, and cost passages through the Markdown cache (`scripts/to_markdown.py`). Not yet read by a human member. Source: arXiv:2103.09655 PDF, stored at `downloads/markidis-2021-pinn-linear-solvers/markidis-2021-pinn-linear-solvers.pdf`, SHA-256 35e1c4b012e48acbbd96b53c5d379c83aacfe8691f39f4e0716fcb4333e9204c. Not compared with the published version.
+
+- Section 2: typical PINNs use 4 to 6 hidden layers of 50 to 100 units, Xavier init, Sobol collocation points by default, and Adam followed by L-BFGS-B. The author found L-BFGS-B "by far the highest accuracy and faster convergence" among the optimizers tried. ReLU-like activations are avoided.
+- Section 2.1 (2D Poisson): 128 x 128 Sobol points plus 4,000 boundary points; 10,000 Adam epochs at learning rate 0.001, then 13,000 L-BFGS-B epochs (DeepXDE). The Adam training error levels off at about 5e-3 to 1e-2 after 2,000 epochs; L-BFGS-B takes it to 2.79e-5. This is the training (residual) error, not the relative L2 error against the solution.
+- Same section: training took 6,380 s (about 1.5 h) on a dual-core Intel i5 CPU; petsc4py CG on a 128 x 128 grid took 92.28 s on the same machine, run to double-precision machine epsilon. The two runs were not matched in accuracy.
+- Section 3: networks with four or more hidden layers performed about the same in early training; the activation function mattered.
+- Section 4: transfer learning (warm-starting from a network trained for another source term) cut training a lot; with it, only about 10 Adam epochs were needed before L-BFGS-B.
+
+Use for us: Adam alone plateaued in this Poisson case, so the L-BFGS phase is likely needed for the 1e-3 target. Transfer learning per query is not our design; we train once.

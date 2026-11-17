@@ -32,3 +32,12 @@ This is the primary, peer-reviewed source for the 79% figure, which our docs pre
 ## Check status and gaps
 
 Venue, volume, issue, pages, and DOI confirmed in Crossref. The rule quotations come from the arXiv v1 HTML, not the published text; check the wording and add section numbers from the Nature version before quoting in the report. The second half of the arXiv HTML was not read.
+
+## Full-text check of the Methods recommendations, 2026-11-17
+
+Reader: Claude Code AI agent; read the arXiv v1 PDF (stored at `downloads/mcgreivy-2024-weak-baselines/mcgreivy-2024-weak-baselines.pdf`, SHA-256 65ce0348174cfc893dd4d870e2d798450de2ad157e1ce150ac4dfdabf6f2c20a). This covers the second half of the paper that the first check did not read. Not yet read by a human member.
+
+- Rule 1, in practice: "reduce the spatial resolution and/or the number of iterations of the standard solver until the two methods have equal accuracy or equal runtime." For us, the classical grid at each target is the coarsest one that passes.
+- Methods, recommendation 2: justify why the CPU, GPU, or TPU choice used for the comparison is fair; the authors say GPU-GPU comparisons are usually fairest but CPU-GPU can be fair in some contexts.
+- Methods, recommendation 3: to account for data generation and training cost, report the number of evaluations N at which the ML solver recovers that cost. This is the same form as our break-even count N*.
+- Discussion: of 232 abstracts checked, 94.8% (220/232) mention only positive results. The authors suggest registered reports as one reform, which matches our rule of freezing the protocol before trials.
