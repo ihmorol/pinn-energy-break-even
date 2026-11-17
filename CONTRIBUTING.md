@@ -62,7 +62,8 @@ Agents need authorization to commit, push, change repository settings, or publis
 | `references/` | Source records and checked paper notes |
 | `experiments/` | Small run records and the study electricity ledger |
 | `.agents/skills/` | Shared instructions for recurring research tasks |
-| `scripts/`, `tests/` | Workspace checks and their tests |
+| `scripts/`, `tests/` | Workspace checks, the document-to-Markdown tool, and their tests |
+| `outputs/markdown-cache/` | Ignored Markdown copies of documents, made by `scripts/to_markdown.py` |
 
 When the first pilot is implemented, add reusable solver and measurement code under `src/pinn_energy_break_even/`, runnable settings under `configs/`, and tests under `tests/`. Add those paths with actual files rather than empty scaffolding. Keep notebooks, if needed, for exploration; move reusable work into tested code. The [coding rules](docs/coding-rules.md) give the full layout and the rules all code follows.
 
