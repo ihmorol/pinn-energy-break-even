@@ -9,6 +9,7 @@ These skills are shared instructions stored in the checkout. They do not require
 | [literature-check](literature-check/SKILL.md) | Check a paper, citation, or literature claim |
 | [experiment-run](experiment-run/SKILL.md) | Plan, run, or record a pilot, training job, validation, or energy trial |
 | [research-review](research-review/SKILL.md) | Review a method, result, figure, or report claim before accepting it |
+| [read-documents](read-documents/SKILL.md) | Read a PDF, Word file, slide deck, spreadsheet, or unfamiliar folder without wasting tokens |
 
 Hosts that support `.agents/skills/` may discover these skills after reopening the checkout. If a skill is not listed, ask the agent to read its `SKILL.md` directly. Do not assume that writing a file has installed it in every host. The root Claude, Gemini, and Copilot entry files point to the same shared rules.
 

@@ -12,6 +12,10 @@ The project title is exactly:
 
 The proposal is submitted. The project has a 1D heat pilot and one main 2D steady-diffusion study. Do not reopen topic selection, add benchmark families, or present planned work as completed work. The research plan holds the scope and the protocol decisions still to be made.
 
+## Read files cheaply
+
+Do not open PDFs, Word files, slides, or spreadsheets directly. Check `outputs/markdown-cache/INDEX.md` first. If a file is missing there, convert it with `scripts/to_markdown.py`, then search the cached Markdown and read only the lines you need. Use `--overview` to map an unfamiliar folder before opening files. The [read-documents skill](.agents/skills/read-documents/SKILL.md) has the setup and commands. Check numbers, equations, and quotations against the original page before citing them.
+
 ## Writing is a project requirement
 
 Use the owner's words when their supplied writing gives a suitable choice. Otherwise use simple, common words. Keep sentences direct and readable. Correct grammar and spelling without replacing the voice with formal or stock AI wording.

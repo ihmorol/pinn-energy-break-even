@@ -1,0 +1,4 @@
+# Document-to-Markdown tools for agents. Install into the ignored .venv only.
+# Extras cover offline formats. Audio transcription, YouTube, and Azure
+# Document Intelligence are left out because they send data to outside services.
+markitdown[pdf,docx,pptx,xlsx,xls,outlook]==0.1.9
