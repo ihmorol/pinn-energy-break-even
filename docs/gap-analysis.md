@@ -17,7 +17,9 @@ Citation counts are OpenAlex `cited_by_count` on 2026-11-17. They show reach, no
 
 Limits: the 2026-11-17 search was targeted, not systematic. "Not found" means not found in our corpus, the 2026-11-12 search, or this search.
 
-## 2. Venue status of our current 24 papers
+## 2. Venue status of the first-search papers
+
+This section describes the 24 papers of the first search. Chatain et al. 2025 has since moved to the background file (Section 5, item 7), so 23 remain in the shortlist.
 
 **Peer-reviewed (17):** Grossmann et al. 2024 (IMA J. Appl. Math.), Raissi et al. 2019 (J. Comput. Phys.), Karniadakis et al. 2021 (Nat. Rev. Phys.), Cuomo et al. 2022 (J. Sci. Comput.), de Hoop et al. 2022 (J. Mach. Learn.), Wang, Teng, Perdikaris 2021 (SIAM J. Sci. Comput.), Wang, Yu, Perdikaris 2022 (J. Comput. Phys.), Krishnapriyan et al. 2021 (NeurIPS), Mishra and Molinaro 2022 (IMA J. Numer. Anal.), Hao et al. 2024 (NeurIPS D&B), Henderson et al. 2020 (JMLR), Strubell et al. 2019 (ACL), Schwartz et al. 2020 (CACM), Patterson et al. 2022 (IEEE Computer), Luccioni et al. 2024 (FAccT), Dodge et al. 2022 (FAccT), Reddi et al. MLPerf Power (HPCA 2025).
 
