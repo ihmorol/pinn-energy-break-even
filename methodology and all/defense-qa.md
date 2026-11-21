@@ -24,6 +24,34 @@
 
 ---
 
+## Most likely questions from the supervisor
+
+A supervisor already knows the proposal. They usually ask about progress, fairness, whether the measurements can be trusted, and what they must approve. This is our estimate of the order, most likely first. "Go to" gives the full answer below.
+
+| Rank | Likely question | Go to | Why a supervisor asks it | Who |
+|---|---|---|---|---|
+| 1 | Where are you now, and are you on schedule? | I1, K1 | First question at any progress check | 3 |
+| 2 | What exactly is new in your work? | A8, B1 | Checks that the contribution is clear and narrow | 1 |
+| 3 | Is your classical baseline strong enough? | E2, B8 | A weak baseline gives a false win (McGreivy and Hakim) | 2 |
+| 4 | How will you measure energy, and can we trust it? | G1, G2 | The whole result depends on the meters | 2 |
+| 5 | Which machine and budget? What do you need from me? | G6, K7 | The supervisor must approve these before any run | 3 |
+| 6 | How do you make sure both methods reach the same accuracy? | F1, F5 | Matched accuracy is the core fairness rule | 2 |
+| 7 | What if there is no crossover? Is the project still useful? | I3, H4 | Tests whether a negative result is planned for | 3 |
+| 8 | Your new questions were not in the proposal. Is this scope creep? | K6, J5 | Protects the 12-week plan | 3 |
+| 9 | What is your biggest risk? | K8 | Shows the team knows where the plan can fail | 2 |
+| 10 | What goes into the PINN's setup cost? Do failed runs count? | H2, D6, D10 | Hidden training cost would bias N star | 3 |
+| 11 | How do you show uncertainty? Are three seeds enough? | H7, D7 | One lucky run must not decide the result | 3 |
+| 12 | Where does the reference answer come from? | F3, F4 | The grading must not favor one method | 2 |
+| 13 | Why such a simple problem? | C1, C5 | Checks that the result is not trivial | 2 |
+| 14 | Why report energy and time separately? | A7, H8 | Checks the Green Computing angle | 1 |
+| 15 | Has anyone done a break-even before? | B2 | Checks the literature is current | 1 |
+| 16 | Why not reduced basis? | E4 | A supervisor who knows numerics may raise it | 3 |
+| 17 | How can others repeat your work? | K2 | Reproducibility | 2 |
+
+**How to use this list:** each member learns the full answers for their rows first, then the ★ questions in the sections below.
+
+---
+
 ## A. Topic and motivation
 
 | # | Question | Answer | Who |
@@ -154,6 +182,9 @@
 | K3 | What if you run out of time or budget? | The 0.01% target and optional checks go first. The two main targets and three seeds stay. | 3 |
 | K4 | Who did what? | Each member answers this in their own words. | All |
 | K5 | Did you use AI tools? | Answer honestly, following the course's AI-use rules. | All |
+| K6 | Your proposal did not include these extra questions. Is this scope creep? | They are proposals only, in issue #11, and wait for approval. Most reuse data the main study already collects. The main study comes first; nothing is added unless approved. | 3 |
+| K7 | What do you need from me? | Approval of the machine, the protocol, and the compute budget before any run. Then decisions on the proposals in issue #11 and the open protocol choices, such as the accuracy rule and the stop rule. | 3 |
+| K8 | What is your biggest risk? | Two risks. The PINN may not reach 0.1% within budget, which we would report as a result. And the cost of one query may be too small to measure, so we measure long blocks of queries. | 2 |
 
 ---
 
