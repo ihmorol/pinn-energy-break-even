@@ -10,6 +10,25 @@
 
 ---
 
+## The methodology diagram
+
+This is the slide for the whole talk. The image is a PNG copy of [methodology-flowchart-a4.pdf](methodology-flowchart-a4.pdf) for slides; the PDF stays the source. If the PDF changes, rebuild the image with `pdftoppm -png -r 200 -singlefile "methodology and all/methodology-flowchart-a4.pdf" "methodology and all/methodology-flowchart"`.
+
+![Methodology flowchart: problem setup, PINN and finite-difference branches, accuracy check, energy trials, total cost, break-even point, and result per accuracy target](methodology-flowchart.png)
+
+How the speeches use the numbered boxes:
+
+| Speech step | Boxes | Who points |
+|---|---|---|
+| Set up | 1 | Member 2; Member 3 for the "one problem family" limit |
+| Split, PINN side | 2, 3, 4, 5 (with the "All runs done?" and "Budget used?" checks) | Member 2; Member 3 for retraining |
+| Split, finite-difference side | 6, 7, 8, 9 | Member 2 |
+| Check | "Accuracy check" and "Not accurate enough" | Member 2; Member 3 for checking |
+| Measure | 10 | Member 2; Member 3 for "one machine", device energy, and placement |
+| Cross | 11, 12, 13 | Member 2; Member 1 when saying "N star" |
+
+On a projector, zoom to each part as it is named. The small labels are hard to read from the back of a room at full-page size.
+
 ## 1. Time plan
 
 The three speeches total about 620 words. Short sentences need short pauses, so plan for 125 to 130 words a minute. That gives about 4 minutes 45 seconds to 5 minutes, which is tight. Rehearse with a timer. If you go over 4:50, use the cuts in Section 4; they save about 15 seconds.
