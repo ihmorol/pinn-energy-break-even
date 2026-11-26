@@ -73,6 +73,18 @@ A search limited to papers published in 2025-2026 in journals or archival confer
 39. [Chung et al. (2025), ML.ENERGY Benchmark, NeurIPS 38](chung-2025-ml-energy-benchmark.md). Newest peer-reviewed inference-energy measurement method; settings alone changed energy by more than 40%.
 40. [Toscano et al. (2025), Machine Learning for Computational Science and Engineering 1](toscano-2025-pinns-to-pikans.md). Most cited recent PINN review; up-to-date companion to Karniadakis et al. 2021. No PINN-versus-classical cost comparison in the part read.
 
+## Tier G: scoping-review full-text additions (added 2026-11-26)
+
+Found by the scoping review in [docs/systematic-review/](../docs/systematic-review/README.md) and read in full (items 41-44 from arXiv copies, items 45-47 from the publisher or repository PDF). Each has a note and a stored PDF with its hash.
+
+41. [Li, Jiang, Song (2026), arXiv:2611.10666](li-2026-parametric-pinn-microfluidic.md). Preprint. Physics-only parametric PINN against COMSOL FEM with an explicit wall-clock break-even of about 108 design evaluations, training included. It is not at matched accuracy, the hardware differs, and there is no energy. It removes "first PINN break-even" as a possible claim. (Earlier listed below as "not a benchmark"; that description was wrong.)
+42. [Zhang et al. (2026), arXiv:2605.15399](zhang-2026-breakeven-complexity.md). Preprint. Breakeven complexity against an error-matched classical solver on the same hardware, with tuning counted. Supervised and foundation models only. This is the method standard closest to ours.
+43. [Winkler and Stoll (2026), Journal of Computational Science](winkler-stoll-2026-flow-surrogates.md). Break-even formula of the same form as our cost model, for supervised flow surrogates; it leaves the configuration search uncharged.
+44. [Sun et al. (2026), arXiv:2607.17318](sun-2026-fevessel.md). Submitted manuscript. Label-free (energy-trained) operator against AMG-preconditioned CG at a stated tolerance, with training time reported.
+45. [Jediný (2025), bachelor's thesis, Charles University](jediny-2025-pinn-fdm-plasma-thesis.md). Single-problem PINN against an ADI finite-difference solver, with separate break-even points for time (N = 1253) and energy (N = 1303) over grid resolution. Energy is estimated from utilization times TDP, the hardware differs, and the break-even is extrapolated. It is the nearest prior energy break-even for a PINN.
+46. [Tandale and Stoffel (2024), Engineering with Computers](tandale-2024-spiking-fem.md). Spiking network inside an FE solver: runtime against classical FE, and modelled per-forward-pass energy across hardware. No network-against-FEM energy comparison.
+47. [Xue et al. (2026), Nature Communications](xue-2026-geothermal-operator.md). Physics-constrained neural operator with a 1,400-fold speedup that excludes model construction and data generation. An example of a speedup reported without training cost.
+
 ## Verified entries without a stored PDF (shortlist only)
 
 These were verified against Crossref, OpenAlex, or the arXiv API on 2026-11-12 but were not downloaded (no open-access PDF found, or the paper is supporting context only). Access is listed as the reason.
@@ -84,7 +96,6 @@ These were verified against Crossref, OpenAlex, or the arXiv API on 2026-11-12 b
 - Wu et al. (2022), "Sustainable AI", MLSys 2022, arXiv:2111.00364, ~557 citations. Industry-scale context; not load-bearing for our protocol.
 - Novo and Terrés (2025), "Can neural networks learn finite elements?", J. Comput. Appl. Math. 453:116168, DOI 10.1016/j.cam.2024.116168, arXiv:2405.06488, ~3 citations. Numerical-analysis follow-up to Grossmann et al.
 - Kirchdoerfer and Ortiz (2016), "Data-driven computational mechanics", CMAME 304:81-101, DOI 10.1016/j.cma.2016.02.001, ~834 citations. Background only; outside our fixed scope.
-- Li, Jiang, Song (2026), parametric PINN for microfluidic cooling, arXiv:2611.10666, 0 citations. Application-level example of the amortization narrative; not a benchmark.
 
 ## What the search found and did not find
 

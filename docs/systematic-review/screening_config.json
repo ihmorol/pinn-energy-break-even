@@ -1,0 +1,51 @@
+{
+  "review_title": "Neural PDE solver energy and break-even against classical solvers (scoping review)",
+  "exclusion_codes": [
+    {"code": "E1", "short": "publication type", "label": "Publication type (editorial, erratum, letter, news, abstract only, patent, dataset; review or survey with no new computation)"},
+    {"code": "E2", "short": "problem or method", "label": "Not solving PDEs with a neural PDE solver"},
+    {"code": "E3", "short": "no cost element", "label": "No computational cost, time, energy, power or carbon element (accuracy or theory only; energy only as a physical quantity)"},
+    {"code": "E4", "short": "no comparator, no energy", "label": "Cost only for the neural model or against other neural models, with no energy, power or carbon reported"},
+    {"code": "E5", "short": "runtime only, no repeated use", "label": "Runtime, speed-up or FLOP comparison with a classical solver with no energy element and no repeated-use element (break-even, amortization, offline-plus-online accounting; parametric or many-query workload for physics-informed models)"},
+    {"code": "E9", "short": "other", "label": "Other (explained)"}
+  ],
+  "core_criteria": [
+    "a neural PDE solver (PINN-family or other neural surrogate of a PDE)",
+    "a cost element: computational energy, power or carbon; or a comparison with a classical solver that involves repeated use (break-even, amortization, offline-plus-online cost, or a parametric or many-query workload)"
+  ],
+  "personas": {
+    "A": "You are REVIEWER A, a computational scientist who builds physics-informed neural networks, neural operators and finite element and finite difference solvers, and who knows how their costs are measured.",
+    "B": "You are REVIEWER B, a systematic and scoping review methodologist who applies eligibility rules exactly as written and checks the order of exclusion codes."
+  },
+  "conflict_policy": "adjudicate",
+  "qc": {
+    "near_miss": {
+      "neural_solver": ["physics[- ]informed", "\\bPINNs?\\b", "neural operator", "\\bDeepONets?\\b", "\\bFNO\\b", "neural (network )?(PDE )?(solver|surrogate)", "deep (ritz|galerkin)", "surrogate", "emulator"],
+      "cost_element": ["energy (consumption|efficien|usage|cost)", "power (consumption|draw|usage)", "carbon", "\\bCO2\\b", "joule", "break[- ]?even", "amorti[sz]", "many[- ]query", "multi[- ]query", "offline", "parametri", "parameteri[sz]"]
+    },
+    "random_exclusion_sample": 100,
+    "random_seed": 2026,
+    "policy": "advance"
+  },
+  "seeds": [
+    {"label": "Wang, Wang, Perdikaris 2021, Science Advances", "doi": "10.1126/sciadv.abi8605", "pmid": "", "title": "Learning the solution operator of parametric partial differential equations with physics-informed DeepONets"},
+    {"label": "Huang et al. 2026, arXiv preprint", "doi": "10.48550/arxiv.2610.32911", "pmid": "", "title": "Classical, machine learning, and hybrid solvers for partial differential equations: An evidence-weighted review and decision framework"},
+    {"label": "Kapoor et al. 2025, arXiv preprint (EcoL2)", "doi": "10.48550/arxiv.2505.12556", "pmid": "", "title": ""},
+    {"label": "Zhang et al. 2026, arXiv preprint", "doi": "10.48550/arxiv.2605.15399", "pmid": "", "title": ""},
+    {"label": "Yoo et al. 2026, arXiv preprint", "doi": "10.48550/arxiv.2609.30580", "pmid": "", "title": ""},
+    {"label": "Wilson et al. 2025, arXiv preprint", "doi": "10.48550/arxiv.2509.24517", "pmid": "", "title": ""}
+  ],
+  "languages_allowed": ["English"],
+  "models": {"A": "sonnet", "B": "sonnet", "ADJ": "sonnet", "QC": "sonnet", "FTA": "sonnet", "FTB": "sonnet", "FTADJ": "sonnet"},
+  "model_labels": {
+    "A": "Claude Sonnet (subagent model alias 'sonnet'; exact version to record from the run)",
+    "B": "Claude Sonnet (subagent model alias 'sonnet'; exact version to record from the run)",
+    "ADJ": "Claude Sonnet (subagent model alias 'sonnet'; exact version to record from the run)",
+    "QC": "Claude Sonnet (subagent model alias 'sonnet'; exact version to record from the run)",
+    "FTA": "Claude Sonnet (subagent model alias 'sonnet')",
+    "FTB": "Claude Sonnet (subagent model alias 'sonnet')",
+    "FTADJ": "Claude Sonnet (subagent model alias 'sonnet')"
+  },
+  "agent_type": "screening-reviewer-agent",
+  "batching": {"max_records": 50, "max_chars": 90000, "wrap": 150},
+  "dedup": {"doi_title_guard": true}
+}

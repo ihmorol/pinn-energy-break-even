@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team Reading Pack</title>
+<style>
+:root {
+  --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1b; --muted: #5f5f5a; --line: #e2e1dc;
+  --accent: #2f5d8a; --accent-soft: #e6eef6; --good: #2e7d4f; --good-soft: #e5f3ea;
+  --warn: #9a6a00; --warn-soft: #fbf1d9; --bad: #a33a32; --bad-soft: #f8e5e3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615; --card: #20201e; --text: #ecebe6; --muted: #a8a7a0; --line: #34332f;
+    --accent: #8fb6dc; --accent-soft: #243444; --good: #7cc79a; --good-soft: #1f3327;
+    --warn: #e0b85a; --warn-soft: #3a3020; --bad: #e08a82; --bad-soft: #3d2422;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 24px 16px 80px; }
+h1 { font-size: 1.6rem; margin: 0 0 4px; }
+.sub { color: var(--muted); margin: 0 0 16px; }
+details.box { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; }
+details.box summary { cursor: pointer; font-weight: 600; }
+table.rules { width: 100%; border-collapse: collapse; font-size: .9rem; margin-top: 8px; }
+table.rules th, table.rules td { border-top: 1px solid var(--line); padding: 6px; text-align: left; vertical-align: top; }
+.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 0; border-bottom: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.bar input[type=search], .bar input[type=text], .bar select { font: inherit; padding: 6px 10px; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--card); color: var(--text); }
+.bar input[type=search] { flex: 1 1 200px; min-width: 0; }
+button { font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--card); color: var(--text);
+  border-radius: 8px; padding: 6px 12px; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+.progress { color: var(--muted); font-size: .9rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin: 14px 0; }
+.card.sel-yes { border-left: 5px solid var(--good); }
+.card.sel-no { border-left: 5px solid var(--bad); }
+.top { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; color: var(--muted); font-size: .85rem; }
+.rank { font-weight: 700; color: var(--accent); font-size: 1rem; }
+.card h2 { font-size: 1.12rem; line-height: 1.35; margin: 6px 0 4px; }
+.card h2 a { color: var(--text); text-decoration: none; }
+.card h2 a:hover { text-decoration: underline; }
+.meta { color: var(--muted); font-size: .9rem; margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+.chip { font-size: .78rem; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.chip.good { background: var(--good-soft); color: var(--good); }
+.chip.warn { background: var(--warn-soft); color: var(--warn); }
+.label { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; margin-top: 10px; }
+.abstract { margin: 4px 0 0; }
+.note { margin: 4px 0 0; padding: 8px 10px; background: var(--accent-soft); border-radius: 8px; font-size: .92rem; }
+.score { margin-top: 12px; border-top: 1px dashed var(--line); padding-top: 10px; display: grid; gap: 8px; }
+.crit { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.crit .name { width: 150px; font-size: .9rem; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; padding: 4px 14px; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button.on { background: var(--accent); color: var(--bg); font-weight: 700; }
+.hint { font-size: .8rem; color: var(--muted); }
+.result { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: .92rem; }
+.result input { flex: 1 1 240px; min-width: 0; font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); }
+.result select { font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); }
+.empty { color: var(--muted); text-align: center; padding: 40px 0; }
+@media (max-width: 560px) { .crit .name { width: 100%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Team reading pack</h1>
+  <p class="sub">The page opens on the 17 studies to read: 12 to cite and read, then 5 to read only (preprints or a thesis, not cited). The other 38 are under the filter.</p>
+
+  <details class="box" open>
+    <summary>How to use this page</summary>
+    <ol>
+      <li>Read the title and abstract. The numbered tag is the study's number in the methodology figure; "Stages" are the figure's stage numbers.</li>
+      <li>The 0, 1 or 2 buttons start with the AI's scores. Change any score you disagree with; the total and the rule's suggestion update by themselves.</li>
+      <li>To share your changes, type your name and click <b>Export CSV</b>. Changes stay in this browser until you export them.</li>
+    </ol>
+    <p class="hint">Blue boxes are the AI's words, not the authors'. Check them against the abstract. The full ranking and the stage map are in <code>docs/systematic-review/reading-list.md</code>.</p>
+  </details>
+
+  <details class="box">
+    <summary>Judging sheet and decision rule</summary>
+    <table class="rules">
+      <tr><th>Criterion</th><th>2</th><th>1</th><th>0</th></tr>
+      <tr><td>C1 Relevance</td><td>Neural PDE solver (best: physics-informed and parametric) compared with a classical solver, with training or offline cost counted</td><td>Compared with a classical solver per query only</td><td>No classical comparison</td></tr>
+      <tr><td>C2 Cost evidence</td><td>Energy measured on hardware, or runtime with training counted</td><td>Per-query runtime, or an energy estimate (CodeCarbon, Green Algorithms, TDP)</td><td>A claim with no number</td></tr>
+      <tr><td>C3 Fairness</td><td>Matched accuracy and an efficient classical baseline are stated</td><td>One of the two is stated</td><td>Neither is stated</td></tr>
+      <tr><td>C4 Gap value</td><td>Could falsify or narrow one of our gap claims (GC1-GC5)</td><td>Supports a method or design choice in our protocol</td><td>Background only</td></tr>
+      <tr><td>C5 Source</td><td>Peer-reviewed journal or archival conference</td><td>Preprint or thesis with a full method</td><td>Unclear source</td></tr>
+    </table>
+    <p><b>Select</b> if the total is 6 or more and C1 is at least 1. <b>Always select</b> a study with C4 = 2, or one on the reading list. Preprints and theses can be selected for reading but are not cited.</p>
+  </details>
+
+  <div class="bar">
+    <input type="text" id="reviewer" placeholder="Your name" aria-label="Your name">
+    <input type="search" id="q" placeholder="Search title, abstract, venue or ID" aria-label="Search">
+    <select id="filter" aria-label="Filter">
+      <option value="list" selected>Reading list (17)</option>
+      <option value="cite">Cite and read (12)</option>
+      <option value="readonly">Read only, do not cite (5)</option>
+      <option value="opt">Optional extras</option>
+      <option value="all">All 55</option>
+      <option value="shortlist">Ranked 45</option>
+      <option value="reserve">Reserves</option>
+      <option value="todo">Not scored yet</option>
+      <option value="yes">Selected</option>
+      <option value="no">Not selected</option>
+      <option value="read">Full text read</option>
+    </select>
+    <span class="progress" id="progress"></span>
+    <button class="primary" id="export">Export CSV</button>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<script id="data" type="application/json">/*DATA*/null</script>
+<script>
+(function () {
+  var DATA = JSON.parse(document.getElementById("data").textContent);
+  var STUDIES = DATA.studies, COLUMNS = DATA.columns;
+  var CRIT = [
+    ["C1_relevance", "C1 Relevance"], ["C2_cost_evidence", "C2 Cost evidence"],
+    ["C3_fairness", "C3 Fairness"], ["C4_gap_value", "C4 Gap value"], ["C5_source", "C5 Source"]
+  ];
+  var KEY = "pinn-sr-reading-pack-v2";
+  var state = { reviewer: "", scores: {} };
+  var BY_ID = {};
+  STUDIES.forEach(function (s) { BY_ID[s.id] = s; });
+
+  function load() {
+    try { var raw = localStorage.getItem(KEY); if (raw) state = JSON.parse(raw); } catch (e) {}
+    state.scores = state.scores || {};
+  }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  function entry(id) {
+    if (!state.scores[id]) {
+      var s = BY_ID[id] || {}, c = {};
+      CRIT.forEach(function (cr) {
+        var v = s.ai ? parseInt(s.ai[cr[0]], 10) : NaN;
+        if (!isNaN(v)) c[cr[0]] = v;
+      });
+      state.scores[id] = { c: c, decision: "", reason: s.ai_reason || "" };
+    }
+    state.scores[id].id = id;
+    return state.scores[id];
+  }
+  function total(e) {
+    var t = 0, n = 0;
+    CRIT.forEach(function (c) { var v = e.c[c[0]]; if (v !== undefined) { t += v; n++; } });
+    return { t: t, complete: n === CRIT.length };
+  }
+  function suggest(e) {
+    var r = total(e);
+    if (!r.complete) return "";
+    var c1 = e.c.C1_relevance, c4 = e.c.C4_gap_value;
+    var listed = /^(\d+|[A-E])$/.test((BY_ID[e.id] || {}).reading_list || "");
+    return (listed || c4 === 2 || (r.t >= 6 && c1 >= 1)) ? "yes" : "no";
+  }
+  function decision(e) { return e.decision || suggest(e); }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+
+  function card(s) {
+    var e = entry(s.id), d = decision(e);
+    var c = el("article", "card" + (d === "yes" ? " sel-yes" : d === "no" ? " sel-no" : ""));
+    var top = el("div", "top");
+    var rl = s.reading_list || "";
+    var tag = /^\d+$/.test(rl) ? "[" + rl + "] Cite and read" : /^[A-E]$/.test(rl) ? rl + ". Read only, do not cite" : rl === "opt" ? "Optional extra" : (s.list === "reserve" ? "Reserve " + s.rank : "Not on the reading list");
+    top.appendChild(el("span", "rank", tag));
+    top.appendChild(el("span", "", s.id));
+    top.appendChild(el("span", "", s.year));
+    if (s.cites) top.appendChild(el("span", "", s.cites + " citations"));
+    c.appendChild(top);
+
+    var h = el("h2");
+    var a = el("a", "", s.title); a.href = s.link; a.target = "_blank"; a.rel = "noopener";
+    h.appendChild(a); c.appendChild(h);
+    c.appendChild(el("div", "meta", [s.authors, "Published in: " + (s.venue_cited || s.venue)].filter(Boolean).join(" · ")));
+
+    var chips = el("div", "chips");
+    var cite = s.citable || "";
+    chips.appendChild(el("span", "chip " + (/^yes$/.test(cite) ? "good" : "warn"), "Cite? " + (cite || "unknown")));
+    if (s.stages) chips.appendChild(el("span", "chip", "Stages " + s.stages));
+    chips.appendChild(el("span", "chip", s.status));
+    if (s.quality) chips.appendChild(el("span", "chip", s.quality));
+    var ft = s.fulltext || "";
+    chips.appendChild(el("span", "chip " + (/^read/.test(ft) ? "good" : /not retrievable|closed/.test(ft) ? "warn" : ""), "Full text: " + (ft.replace(/ \(full text[^)]*\)/, "") || "not read")));
+    (s.gaps || "").split(",").filter(Boolean).forEach(function (g) { chips.appendChild(el("span", "chip", "Tests " + g.trim())); });
+    if (s.published) chips.appendChild(el("span", "chip warn", s.published));
+    c.appendChild(chips);
+
+    if (s.ai_reason) {
+      c.appendChild(el("div", "label", "Why it matters (AI)"));
+      c.appendChild(el("p", "note", s.ai_reason));
+    }
+    c.appendChild(el("div", "label", "Abstract"));
+    c.appendChild(el("p", "abstract", s.abstract || "No abstract in any index. Open the title link to read it."));
+    if (s.note) {
+      c.appendChild(el("div", "label", "AI screener's note"));
+      c.appendChild(el("p", "note", s.note));
+    }
+    if (s.fulltext_note) {
+      c.appendChild(el("div", "hint", "Full-text note in the repository: " + s.fulltext_note));
+    }
+
+    var sc = el("div", "score");
+    CRIT.forEach(function (cr) {
+      var row = el("div", "crit");
+      row.appendChild(el("span", "name", cr[1]));
+      var seg = el("span", "seg");
+      [0, 1, 2].forEach(function (v) {
+        var b = el("button", e.c[cr[0]] === v ? "on" : "", String(v));
+        b.type = "button";
+        b.setAttribute("aria-label", cr[1] + " " + v);
+        b.onclick = function () {
+          if (e.c[cr[0]] === v) delete e.c[cr[0]]; else e.c[cr[0]] = v;
+          save(); rerender(c, s);
+        };
+        seg.appendChild(b);
+      });
+      row.appendChild(seg);
+      sc.appendChild(row);
+    });
+    var r = total(e), res = el("div", "result");
+    res.appendChild(el("b", "", "Total " + (r.complete ? r.t : r.t + " (incomplete)")));
+    var sg = suggest(e);
+    res.appendChild(el("span", "hint", sg ? "Rule suggests: " + (sg === "yes" ? "select" : "do not select") : "Score all five to see the rule's suggestion"));
+    var sel = el("select");
+    [["", "Decision: follow rule"], ["yes", "Select"], ["no", "Do not select"]].forEach(function (o) {
+      var op = el("option", "", o[1]); op.value = o[0]; if ((e.decision || "") === o[0]) op.selected = true; sel.appendChild(op);
+    });
+    sel.onchange = function () { e.decision = sel.value; save(); rerender(c, s); };
+    res.appendChild(sel);
+    var reason = el("input"); reason.type = "text"; reason.placeholder = "Reason (one line)"; reason.value = e.reason || "";
+    reason.oninput = function () { e.reason = reason.value; save(); };
+    res.appendChild(reason);
+    sc.appendChild(res);
+    c.appendChild(sc);
+    return c;
+  }
+
+  function rerender(oldCard, s) {
+    var fresh = card(s);
+    oldCard.replaceWith(fresh);
+    progress();
+  }
+
+  function matches(s) {
+    var f = document.getElementById("filter").value;
+    var q = document.getElementById("q").value.trim().toLowerCase();
+    var e = entry(s.id), d = decision(e), done = total(e).complete;
+    var rl = s.reading_list || "";
+    if (f === "list" && !/^(\d+|[A-E])$/.test(rl)) return false;
+    if (f === "cite" && !/^\d+$/.test(rl)) return false;
+    if (f === "readonly" && !/^[A-E]$/.test(rl)) return false;
+    if (f === "opt" && rl !== "opt") return false;
+    if (f === "shortlist" && s.list !== "shortlist") return false;
+    if (f === "reserve" && s.list !== "reserve") return false;
+    if (f === "todo" && done) return false;
+    if (f === "yes" && d !== "yes") return false;
+    if (f === "no" && d !== "no") return false;
+    if (f === "read" && !/^read/.test(s.fulltext || "")) return false;
+    if (q) {
+      var hay = [s.id, s.title, s.abstract, s.venue, s.authors, s.note].join(" ").toLowerCase();
+      if (hay.indexOf(q) < 0) return false;
+    }
+    return true;
+  }
+
+  function render() {
+    var list = document.getElementById("list");
+    list.innerHTML = "";
+    var shown = STUDIES.filter(matches);
+    if (!shown.length) list.appendChild(el("p", "empty", "No studies match this filter."));
+    shown.forEach(function (s) { list.appendChild(card(s)); });
+    progress();
+  }
+
+  function progress() {
+    var done = 0, yes = 0;
+    STUDIES.forEach(function (s) { var e = entry(s.id); if (total(e).complete) done++; if (decision(e) === "yes") yes++; });
+    document.getElementById("progress").textContent = done + " of " + STUDIES.length + " scored · " + yes + " selected";
+  }
+
+  function csvCell(v) {
+    v = v === undefined || v === null ? "" : String(v);
+    return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function exportCsv() {
+    var map = { list: "list", rank: "rank", id: "id", year: "year", title: "title", venue: "venue", status: "status",
+      quality_lists: "quality", identity_check: "identity", published_version_note: "published", fulltext: "fulltext",
+      citations_openalex: "cites", link: "link", tests_gap: "gaps", citable: "citable",
+      reading_list: "reading_list", stages: "stages", venue_cited: "venue_cited" };
+    var lines = [COLUMNS.map(csvCell).join(",")];
+    STUDIES.forEach(function (s) {
+      var e = entry(s.id), r = total(e), d = decision(e);
+      lines.push(COLUMNS.map(function (col) {
+        if (map[col]) return csvCell(s[map[col]]);
+        if (col.indexOf("C") === 0 && col.indexOf("_") === 2) return csvCell(e.c[col]);
+        if (col === "total") return csvCell(r.complete ? r.t : "");
+        if (col === "select_yes_no") return csvCell(d);
+        if (col === "reason") return csvCell(e.reason);
+        if (col === "reviewer") return csvCell(r.complete || e.reason ? state.reviewer : "");
+        return "";
+      }).join(","));
+    });
+    var name = "team-selection-" + (state.reviewer || "reviewer").replace(/[^A-Za-z0-9_-]+/g, "-") + ".csv";
+    var blob = new Blob(["﻿" + lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  load();
+  var rv = document.getElementById("reviewer");
+  rv.value = state.reviewer || "";
+  rv.oninput = function () { state.reviewer = rv.value; save(); };
+  document.getElementById("q").oninput = render;
+  document.getElementById("filter").onchange = render;
+  document.getElementById("export").onclick = exportCsv;
+  render();
+})();
+</script>
+</body>
+</html>
